@@ -10,7 +10,7 @@ import { Logo8Icon } from './icons/Logo8Icon';
 import { Logo9Icon } from './icons/Logo9Icon';
 
 const LogoCard = ({ children }: { children: React.ReactNode }) => (
-    <div className="bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center aspect-square transition-all duration-300 grayscale hover:grayscale-0 hover:shadow-xl hover:border-amber-400">
+    <div className="bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center aspect-square transition-all duration-300 hover:shadow-xl hover:border-amber-400">
         {children}
     </div>
 );

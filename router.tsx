@@ -10,6 +10,7 @@ import FaqPage from './components/pages/FaqPage';
 import ContactPage from './components/pages/ContactPage';
 import HistoryPage from './components/pages/HistoryPage';
 import RoiCalculatorPage from './components/pages/RoiCalculatorPage';
+import NewsPage from './components/pages/NewsPage';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
         path: 'roi-calculator',
         element: <RoiCalculatorPage />,
       },
+      {
+        path: 'news',
+        element: <NewsPage />,
+      }
     ],
   },
   {

@@ -34,6 +34,7 @@ const Header: React.FC = () => {
     { to: '/about', title: 'About' },
     { to: '/how-it-works', title: 'How It Works' },
     { to: '/projects', title: 'Projects' },
+    { to: '/news', title: 'News' },
     { to: '/roi-calculator', title: 'ROI Calculator' },
     { to: '/maintenance', title: 'Maintenance' },
     { to: '/faq', title: 'FAQ' },
