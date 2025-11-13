@@ -1,0 +1,12 @@
+/* index.css */
+.object-bottom {
+  object-position: bottom;
+}
+
+.object-top {
+  object-position: top;
+}
+
+.object-position-20-top {
+  object-position: 20% 20%;
+}

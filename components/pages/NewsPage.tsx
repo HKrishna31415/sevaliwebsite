@@ -6,6 +6,7 @@ interface Post {
   date: string;
   excerpt: string;
   imageUrl: string;
+  objectPosition?: string; // Optional: for custom object-position classes like 'object-position-bottom'
 }
 
 const posts: Post[] = [
@@ -22,14 +23,9 @@ const posts: Post[] = [
     excerpt:
       'Sevali Energy held productive meetings with the Pakistan Institute of Petroleum (PIP) to discuss collaborations and advancements in energy solutions.',
     imageUrl: '/SevaliPakistan.jpeg',
+    objectPosition: 'object-position-20-top',
   },
-  {
-    title: 'Sevali meets Shell of Pakistan',
-    date: '2023-12-10',
-    excerpt:
-      'Sevali Energy held a significant meeting with Shell of Pakistan to explore potential collaborations and advancements in sustainable energy solutions.',
-    imageUrl: '/SevaliWafi.jpeg',
-  },
+
   {
     title: 'Sevali at COP29',
     date: '2024-11-11',
@@ -38,7 +34,7 @@ const posts: Post[] = [
     imageUrl: '/sevaliCOP29.jpeg',
   },
   {
-    title: 'Sevali Meets Wafi',
+    title: 'Sevali Meets Wafi/Shell of Pakistan',
     date: '2024-04-16',
     excerpt:
       'Sevali Energy held a significant meeting with Wafi to discuss potential collaborations and advancements in sustainable energy solutions.',
@@ -90,7 +86,7 @@ const NewsPage: React.FC = () => {
                 <img
                   src={post.imageUrl}
                   alt={post.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className={`w-full h-full object-cover ${post.objectPosition || ''} transform group-hover:scale-105 transition-transform duration-300`}
                 />
               </div>
               <div className="p-6">
