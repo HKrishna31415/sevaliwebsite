@@ -11,6 +11,22 @@ interface Post {
 
 const posts: Post[] = [
   {
+    title: 'Meeting with PSO seniors in Karachi',
+    date: '2025-06-21',
+    excerpt:
+      'Sevali Energy held a productive meeting with PSO seniors in Karachi to discuss the VRU pilot project.',
+    imageUrl: '/PSOSeniorsSevali.jpg',
+    objectPosition: 'object-position-top',
+  },
+  {
+    title: 'Sign MoU with Petroleum Institute of Pakistan regarding partnership for development VRU in Pakistan Market.',
+    date: '2025-06-20',
+    excerpt:
+      'Sevali Energy signed a Memorandum of Understanding with the Petroleum Institute of Pakistan, formalizing a partnership for the development of Vapor Recovery Units (VRU) in the Pakistan market.',
+    imageUrl: '/PIPSevali.jpg',
+    objectPosition: 'object-position-top',
+  },
+  {
     title: 'Sevali went to Global Energy Transition congress',
     date: '2024-05-20',
     excerpt:
@@ -18,12 +34,11 @@ const posts: Post[] = [
     imageUrl: '/sevaliGET.jpg',
   },
   {
-    title: 'PIP',
-    date: '2024-04-15',
-    excerpt:
-      'Sevali Energy held productive meetings with the Pakistan Institute of Petroleum (PIP) to discuss collaborations and advancements in energy solutions.',
+    title: 'Sevali Meets Secretary Saif Anjum',
+    date: 'Apr 15, 2024',
+    excerpt: 'Sevali Energy held productive meetings with Secretary Saif Anjum of the Ministry of Industries & Production, Government of Pakistan, to discuss collaborations and advancements in energy solutions.',
     imageUrl: '/SevaliPakistan.jpeg',
-    objectPosition: 'object-position-20-top',
+    objectPosition: 'object-position-top',
   },
 
   {
