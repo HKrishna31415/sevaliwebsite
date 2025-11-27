@@ -38,7 +38,7 @@ const posts: Post[] = [
     date: 'Apr 15, 2024',
     excerpt: 'Sevali Energy held productive meetings with Secretary Saif Anjum of the Ministry of Industries & Production, Government of Pakistan, to discuss collaborations and advancements in energy solutions.',
     imageUrl: '/SevaliPakistan.jpeg',
-    objectPosition: 'object-position-top',
+    objectPosition: 'object-position-10-top',
   },
 
   {
@@ -91,7 +91,7 @@ const NewsPage: React.FC = () => {
       <PageHero
         title="News & Blog"
         subtitle="Latest updates, milestones, and insights from Sevali Energy."
-        backgroundImageUrl="/sevaliblack.png"
+        backgroundImageUrl="/gasstationfuture.png"
       />
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

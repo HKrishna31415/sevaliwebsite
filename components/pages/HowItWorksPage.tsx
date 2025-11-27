@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import PageHero from '../PageHero';
 import { VruDiagram } from '../VruDiagram';
 import Infographic from '../Infographic';
@@ -8,37 +8,27 @@ const stepsData = [
   {
     id: 1,
     title: "The truck dispenses gasoline into the fuel tank",
-    // Positioned near the truck and tank connection area
-    position: "top-[40%] left-[20%]",
   },
   {
     id: 2,
     title: "Fuel vapor is fed into the VRU",
-    // Positioned over the storage tank, moved right
-    position: "top-[58%] left-[55%]",
   },
   {
     id: 3,
     title: "VRU uses compression, separation, and condensation",
-    // Positioned over the VRU machine, moved right
-    position: "top-[28%] left-[85%]",
   },
   {
     id: 4,
     title: "Vapor is turned into gasoline",
-    // Positioned near the VRU to show output
-    position: "top-[55%] left-[75%]",
   },
   {
     id: 5,
     title: "Fuel is returned back to the tank. You make money.",
-    // Positioned near the bottom, between truck and tank
-    position: "top-[88%] left-[55%]",
   },
 ];
 
 const HowItWorksPage: React.FC = () => {
-    const [activeStep, setActiveStep] = useState<number>(1);
+
 
     return (
         <>
@@ -56,32 +46,17 @@ const HowItWorksPage: React.FC = () => {
                         </div>
 
                         {/* Interactive Points & Tooltips */}
-                        {stepsData.map(step => (
-                             <div key={step.id} className={`absolute ${step.position} transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center`}>
-                                {activeStep === step.id && (
-                                    <div className="mb-3 w-60 bg-white p-4 rounded-lg shadow-2xl z-10 animate-fade-in-up">
-                                        <p className="text-gray-700 font-medium text-center">{step.title}</p>
-                                    </div>
-                                )}
-                                <button
-                                    onClick={() => setActiveStep(step.id)}
-                                    className="w-10 h-10 bg-amber-500 text-white font-bold text-lg rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400"
-                                    aria-label={`Show details for step ${step.id}`}
-                                >
-                                    {step.id}
-                                </button>
-                            </div>
-                        ))}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                            {stepsData.map(step => (
+                                <div key={step.id} className="bg-white p-6 rounded-lg shadow-md">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-2">Step {step.id}</h3>
+                                    <p className="text-gray-700">{step.title}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
-            <style>{`
-              @keyframes fade-in-up {
-                0% { opacity: 0; transform: translateY(10px); }
-                100% { opacity: 1; transform: translateY(0); }
-              }
-              .animate-fade-in-up { animation: fade-in-up 0.3s ease-out forwards; }
-            `}</style>
 
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-6">
