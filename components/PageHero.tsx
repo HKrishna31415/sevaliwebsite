@@ -8,10 +8,10 @@ interface PageHeroProps {
 }
 
 const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImageUrl }) => (
-  <section className="relative min-h-[400px] bg-cover bg-center text-white flex items-center justify-center py-20" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
-    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/60 to-transparent"></div>
+  <section className="relative min-h-[520px] bg-cover bg-center text-white flex items-center justify-center py-24" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent"></div>
     <div className="relative text-center z-10 px-6">
-      <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in-down text-shadow-lg">{title}</h1>
+      <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4 animate-fade-in-down text-shadow-lg">{title}</h1>
       <div className="w-24 h-1 bg-amber-400 mx-auto my-6 animate-fade-in-down" style={{animationDelay: '0.4s'}}></div>
       <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto animate-fade-in-up text-shadow">{subtitle}</p>
     </div>

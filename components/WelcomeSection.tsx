@@ -12,17 +12,17 @@ const WelcomeSection: React.FC = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Column */}
                     <div className="flex flex-col items-start text-left">
-                        <h2 className="text-5xl lg:text-6xl font-bold text-[#0F4C5C] mb-6">
+                        <h2 className="text-5xl lg:text-6xl font-bold font-display text-gray-900 mb-6">
                             Welcome!
                         </h2>
-                        <blockquote className="mt-6 text-xl text-[#0F4C5C] italic border-l-4 border-[#F2B65D] pl-6">
+                        <blockquote className="mt-6 text-xl text-gray-800 italic border-l-4 border-[#F2B65D] pl-6">
                             "Harnessing innovation to turn vapor into value, safeguarding our planet one molecule at a time."
                         </blockquote>
                     </div>
 
                     {/* Right Column */}
                     <div>
-                        <p className="font-bold text-[#0F4C5C] mb-4 text-lg">
+                        <p className="font-bold text-gray-900 mb-4 text-lg">
                             At Sevali Energy, we are dedicated to pioneering the future of vapor recovery. Our innovative solutions are engineered to not only meet but exceed environmental standards.
                         </p>
                         <p className="text-gray-500 leading-relaxed mb-8">
@@ -35,9 +35,9 @@ const WelcomeSection: React.FC = () => {
                                 className="w-16 h-16 rounded-full object-cover"
                             />
                             <div>
-                                <p className="font-bold text-[#0F4C5C]">Yalçin Aliyev</p>
-                                <div className="w-12 h-0.5 bg-[#E8715A] my-1"></div>
-                                <SignatureIcon className="h-8 text-[#0F4C5C]" />
+                                <p className="font-bold text-amber-700">Yalçin Aliyev</p>
+                                <div className="w-12 h-0.5 bg-amber-500 my-1"></div>
+                                <SignatureIcon className="h-8 text-amber-700" />
                             </div>
                         </div>
                     </div>

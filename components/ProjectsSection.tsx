@@ -58,8 +58,8 @@ const projects = [
 
 type Project = typeof projects[0];
 
-const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => void }) => (
-  <div onClick={onClick} className="relative rounded-lg overflow-hidden group cursor-pointer shadow-lg">
+const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => (
+  <div onClick={onClick} className="relative rounded-xl overflow-hidden group cursor-pointer border border-gray-200 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-lg">
     <img
       src={project.imageUrl}
       alt={project.title}
@@ -67,7 +67,7 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
     />
     <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300"></div>
     <div className="absolute bottom-0 left-0 p-6 text-white">
-      <h3 className="text-xl font-bold">{project.title}</h3>
+      <h3 className="text-xl font-semibold font-display">{project.title}</h3>
       <p className="text-sm text-gray-200">{project.location}</p>
     </div>
   </div>
@@ -106,7 +106,7 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
         >
           <XIcon className="w-8 h-8" />
         </button>
-        <h3 id="project-modal-title" className="text-3xl font-bold text-[#0F4C5C] mb-2">{project.title}</h3>
+        <h3 id="project-modal-title" className="text-3xl font-bold font-display text-gray-900 mb-2">{project.title}</h3>
         <p className="text-md text-gray-500 mb-6">{project.location}</p>
         
         <div className="space-y-6">
@@ -141,8 +141,8 @@ const ProjectsSection: React.FC = () => {
       <section className="bg-gray-50 py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F4C5C]">Our Projects</h2>
-            <div className="w-20 h-1 bg-[#E8715A] mx-auto my-4 rounded"></div>
+            <h2 className="text-4xl font-bold font-display">Our Projects</h2>
+            <div className="w-20 h-1 bg-amber-500 mx-auto my-4 rounded"></div>
             <p className="max-w-2xl mx-auto text-gray-500 leading-relaxed">
               A showcase of our commitment to excellence and innovation in vapor recovery and energy solutions across the globe.
             </p>

@@ -15,7 +15,7 @@ const teamMembers = [
   },
 ];
 
-const TeamMemberCard = ({ member }: { member: typeof teamMembers[0] }) => (
+const TeamMemberCard: React.FC<{ member: typeof teamMembers[0] }> = ({ member }) => (
   <div className="text-center group">
     <div className="relative inline-block">
       <img
@@ -34,8 +34,8 @@ const TeamSection: React.FC = () => {
   return (
     <section className="bg-white py-24">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#0F4C5C]">Our Team</h2>
-        <div className="w-20 h-1 bg-[#E8715A] mx-auto my-4 rounded"></div>
+        <h2 className="text-4xl font-bold font-display text-gray-900">Our Team</h2>
+        <div className="w-20 h-1 bg-amber-500 mx-auto my-4 rounded"></div>
         <p className="max-w-2xl mx-auto text-gray-500 leading-relaxed">
           Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.
         </p>

@@ -13,8 +13,8 @@ const NavLink: React.FC<{
   const isActive = location.pathname === to;
   
   const baseClasses = "transition-colors duration-300";
-  const mobileClasses = `text-2xl font-medium ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'}`;
-  const desktopClasses = `text-sm font-medium ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-500'}`;
+  const mobileClasses = `text-2xl tracking-wide font-medium ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-600'}`;
+  const desktopClasses = `text-sm tracking-wide font-semibold ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-600'}`;
   return (
     <Link
       to={to}
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 text-gray-900 bg-white backdrop-blur-md shadow-lg">
+      <header className="fixed top-0 left-0 right-0 z-50 text-gray-900 bg-white/80 backdrop-blur-md shadow-lg border-b border-black/5">
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link 
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center">
             <div className="text-right">
               <div className="text-xs font-light">Call Us 24/7</div>
-              <a href="tel:+994553204281" className="font-semibold text-lg hover:text-amber-300 transition-colors">
+              <a href="tel:+994553204281" className="font-semibold text-lg hover:text-amber-600 transition-colors">
                 +994 55 320 42 81
               </a>
             </div>

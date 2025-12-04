@@ -15,14 +15,14 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, description }) => {
   return (
-    <div className="bg-gray-100 p-8 rounded-lg flex flex-col text-center text-gray-800 h-full">
-      <div className="text-blue-500 mb-6 flex-shrink-0">
+    <div className="bg-white border border-gray-200 p-8 rounded-xl flex flex-col text-center text-gray-800 h-full shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 transition">
+      <div className="text-amber-500 mb-6 flex-shrink-0">
         {/* FIX: Instantiate the icon component directly with desired props instead of using React.cloneElement. */}
         <Icon className="w-16 h-16 mx-auto" strokeWidth={1} />
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold tracking-wide mb-3 text-gray-900">{title}</h3>
       <p className="text-gray-600 text-sm mb-6 flex-grow">{description}</p>
-      <button className="mt-auto bg-slate-700 hover:bg-slate-900 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors self-center">
+      <button className="mt-auto bg-amber-600 hover:bg-amber-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors self-center">
         <ArrowRightIcon className="w-5 h-5" />
       </button>
     </div>
@@ -63,7 +63,7 @@ const Services: React.FC = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mt-12 space-x-3">
-          <span className="block w-8 h-2 bg-blue-500 rounded-full"></span>
+          <span className="block w-8 h-2 bg-amber-500 rounded-full"></span>
           <span className="block w-2 h-2 bg-gray-500 rounded-full"></span>
           <span className="block w-2 h-2 bg-gray-500 rounded-full"></span>
         </div>

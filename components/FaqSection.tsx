@@ -20,8 +20,8 @@ const FaqSection: React.FC = () => {
         <section className="bg-gray-50 py-24">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-[#0F4C5C]">Trusted by Industry Leaders</h2>
-                    <div className="w-20 h-1 bg-[#E8715A] mx-auto my-4 rounded"></div>
+                    <h2 className="text-4xl font-bold font-display text-gray-900">Trusted by Industry Leaders</h2>
+                    <div className="w-20 h-1 bg-amber-500 mx-auto my-4 rounded"></div>
                     <p className="max-w-2xl mx-auto text-gray-500 leading-relaxed">
                         We are proud to partner with industry leaders and innovators from around the world, delivering solutions that drive success and sustainability.
                     </p>

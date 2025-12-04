@@ -100,17 +100,17 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ icon: Icon, title, onClick }) => (
   <div 
     onClick={onClick}
-    className="bg-white border border-gray-200 rounded-lg p-8 text-center cursor-pointer transition-all duration-300 ease-in-out hover:shadow-xl hover:border-amber-400 hover:-translate-y-2"
+    className="bg-white border border-gray-200 rounded-xl p-8 text-center cursor-pointer transition-all duration-300 ease-in-out shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 hover:border-amber-400"
     role="button"
     tabIndex={0}
     onKeyDown={(e) => e.key === 'Enter' && onClick()}
   >
     <Icon className="w-16 h-16 mx-auto mb-6 text-amber-500" />
-    <h3 className="font-semibold text-gray-700">{title}</h3>
+    <h3 className="font-semibold tracking-wide text-gray-900">{title}</h3>
   </div>
 );
 
-const FaqItem = ({ question, answer, isOpen, onToggle }: { question: string, answer: string, isOpen: boolean, onToggle: () => void }) => (
+const FaqItem: React.FC<{ question: string; answer: string; isOpen: boolean; onToggle: () => void }> = ({ question, answer, isOpen, onToggle }) => (
     <div className="border-b border-gray-200">
       <button onClick={onToggle} className="w-full flex justify-between items-center py-5 px-1 text-left font-medium text-gray-800 hover:text-amber-600">
         <span className="flex-1 pr-4">{question}</span>

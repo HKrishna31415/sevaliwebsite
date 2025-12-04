@@ -96,8 +96,8 @@ const NewsPage: React.FC = () => {
       <section className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <article key={post.title} className="rounded-lg overflow-hidden shadow group bg-white">
-              <div className="h-48 w-full overflow-hidden">
+            <article key={post.title} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm group bg-white transform hover:-translate-y-0.5 transition-shadow hover:shadow-lg">
+              <div className="h-56 w-full overflow-hidden">
                 <img
                   src={post.imageUrl}
                   alt={post.title}
@@ -114,7 +114,7 @@ const NewsPage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
-                <button className="text-amber-600 hover:text-amber-700 font-semibold text-sm">Read more</button>
+                <button className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-600 font-semibold text-sm">Read more</button>
               </div>
             </article>
           ))}
