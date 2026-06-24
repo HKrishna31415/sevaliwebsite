@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRightIcon } from './icons/ArrowRightIcon';
+import { FiArrowRight } from 'react-icons/fi';
 
 const ValueProposition: React.FC = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const ValueProposition: React.FC = () => {
               className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-md flex items-center transition-all duration-300 ease-in-out transform hover:scale-105"
             >
               <span>Help & FAQs</span>
-              <ArrowRightIcon className="w-5 h-5 ml-2" />
+              <FiArrowRight className="w-5 h-5 ml-2" />
             </button>
             <button
               onClick={() => navigate('/how-it-works')}

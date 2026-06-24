@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { XIcon } from './icons/XIcon';
-import { TargetIcon } from './icons/TargetIcon';
-import { WrenchIcon } from './icons/WrenchIcon';
-import { ChartIcon } from './icons/ChartIcon';
+import { FiX } from 'react-icons/fi';
+import { FaBullseye, FaChartLine, FaWrench } from 'react-icons/fa6';
 
 
 const projects = [
@@ -104,19 +102,19 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors"
           aria-label="Close project details"
         >
-          <XIcon className="w-8 h-8" />
+          <FiX className="w-8 h-8" />
         </button>
         <h3 id="project-modal-title" className="text-3xl font-bold font-display text-gray-900 mb-2">{project.title}</h3>
         <p className="text-md text-gray-500 mb-6">{project.location}</p>
         
         <div className="space-y-6">
-            <CaseStudyDetail icon={TargetIcon} title="The Challenge">
+            <CaseStudyDetail icon={FaBullseye} title="The Challenge">
                 {project.challenge}
             </CaseStudyDetail>
-            <CaseStudyDetail icon={WrenchIcon} title="Our Solution">
+            <CaseStudyDetail icon={FaWrench} title="Our Solution">
                 {project.solution}
             </CaseStudyDetail>
-            <CaseStudyDetail icon={ChartIcon} title="The Results">
+            <CaseStudyDetail icon={FaChartLine} title="The Results">
                 {project.results}
             </CaseStudyDetail>
         </div>

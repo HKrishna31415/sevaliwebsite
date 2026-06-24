@@ -1,34 +1,31 @@
-
 import React from 'react';
 
 interface PageHeroProps {
   title: string;
   subtitle: string;
-  backgroundImageUrl: string;
+  backgroundImageUrl?: string;
+  label?: string;
+  children?: React.ReactNode;
 }
 
-const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImageUrl }) => (
-  <section className="relative min-h-[520px] bg-cover bg-center text-white flex items-center justify-center py-24" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
-    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent"></div>
-    <div className="relative text-center z-10 px-6">
-      <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4 animate-fade-in-down text-shadow-lg">{title}</h1>
-      <div className="w-24 h-1 bg-amber-400 mx-auto my-6 animate-fade-in-down" style={{animationDelay: '0.4s'}}></div>
-      <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto animate-fade-in-up text-shadow">{subtitle}</p>
+const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImageUrl, label, children }) => (
+  <section className="relative isolate overflow-hidden bg-[#111827] text-white">
+    {backgroundImageUrl && (
+      <img
+        src={backgroundImageUrl}
+        alt=""
+        className="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
+      />
+    )}
+    <div className="absolute inset-0 -z-10 bg-[linear-gradient(115deg,rgba(10,18,28,0.95),rgba(10,18,28,0.75)_45%,rgba(10,18,28,0.5))]" />
+    <div className="sevali-container py-24 md:py-32">
+      <div className="max-w-4xl">
+        {label && <p className="mb-5 text-sm font-extrabold text-amber-300">{label}</p>}
+        <h1 className="sevali-heading-lg">{title}</h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-white/82">{subtitle}</p>
+        {children && <div className="mt-8">{children}</div>}
+      </div>
     </div>
-    <style>{`
-      .text-shadow { text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-      .text-shadow-lg { text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
-      @keyframes fade-in-down {
-        0% { opacity: 0; transform: translateY(-20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes fade-in-up {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in-down { animation: fade-in-down 0.6s 0.2s ease-out forwards; opacity: 0; }
-      .animate-fade-in-up { animation: fade-in-up 0.6s 0.6s ease-out forwards; opacity: 0; }
-    `}</style>
   </section>
 );
 

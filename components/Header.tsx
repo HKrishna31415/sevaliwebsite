@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { MenuIcon } from './icons/MenuIcon';
-import { XIcon } from './icons/XIcon';
+import { contactInfo, primaryNav } from '../data/siteContent';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const NavLink: React.FC<{
   to: string;
@@ -10,100 +10,76 @@ const NavLink: React.FC<{
   onClick?: () => void;
 }> = ({ to, children, isMobile = false, onClick }) => {
   const location = useLocation();
-  const isActive = location.pathname === to;
-  
-  const baseClasses = "transition-colors duration-300";
-  const mobileClasses = `text-2xl tracking-wide font-medium ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-600'}`;
-  const desktopClasses = `text-sm tracking-wide font-semibold ${isActive ? 'text-amber-600' : 'text-gray-800 hover:text-amber-600'}`;
+  const isActive = to === '/' ? location.pathname === '/' : location.pathname.startsWith(to);
+  const classes = isMobile
+    ? `text-3xl font-semibold ${isActive ? 'text-amber-600' : 'text-gray-900'}`
+    : `text-sm font-extrabold ${isActive ? 'text-amber-700' : 'text-gray-800 hover:text-amber-700'}`;
+
   return (
-    <Link
-      to={to}
-      onClick={onClick}
-      className={`${baseClasses} ${isMobile ? mobileClasses : desktopClasses}`}
-    >
+    <Link to={to} onClick={onClick} className={`transition-colors duration-200 ${classes}`}>
       {children}
     </Link>
   );
 };
 
-
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = [
-    { to: '/about', title: 'About' },
-    { to: '/how-it-works', title: 'How It Works' },
-    { to: '/projects', title: 'Projects' },
-    { to: '/news', title: 'News' },
-    { to: '/roi-calculator', title: 'ROI Calculator' },
-    { to: '/maintenance', title: 'Maintenance' },
-    { to: '/faq', title: 'FAQ' },
-  ];
-
-  const handleMobileLinkClick = () => {
-    setIsMenuOpen(false);
-  }
-
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 text-gray-900 bg-white/80 backdrop-blur-md shadow-lg border-b border-black/5">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          {/* Logo */}
-          <Link 
-            to="/"
-            className="flex items-center cursor-pointer flex-shrink-0"
-            aria-label="Go to homepage"
-          >
-            <img src="/sevalitransparentlogo.png" alt="Sevali Energy Logo" className="h-10" />
+      <header className="fixed left-0 right-0 top-0 z-40 border-b border-white/35 bg-white/82 text-gray-950 shadow-[0_8px_8px_rgba(15,23,42,0.08)] backdrop-blur-2xl backdrop-saturate-150">
+        <div className="sevali-container flex items-center justify-between py-3">
+          <Link to="/" className="flex items-center" aria-label="Go to Sevali Energy homepage">
+            <img src="/sevalitransparentlogo.png" alt="Sevali Energy" className="h-11 w-auto" />
           </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navLinks.map(link => (
+
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+            {primaryNav.map((link) => (
               <NavLink key={link.to} to={link.to}>
                 {link.title}
               </NavLink>
             ))}
           </nav>
 
-          {/* Right Side CTA */}
-          <div className="hidden lg:flex items-center">
-            <div className="text-right">
-              <div className="text-xs font-light">Call Us 24/7</div>
-              <a href="tel:+994553204281" className="font-semibold text-lg hover:text-amber-600 transition-colors">
-                +994 55 320 42 81
-              </a>
-            </div>
+          <div className="hidden items-center gap-4 lg:flex">
+            <a href={`tel:${contactInfo.mobile.replace(/\s/g, '')}`} className="text-right">
+              <span className="block text-xs font-semibold text-gray-500">Consultation line</span>
+              <span className="text-sm font-extrabold text-gray-950">{contactInfo.mobile}</span>
+            </a>
+            <Link to="/contact" className="sevali-button sevali-button-primary text-sm">
+              Start a project
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu" className="p-2 text-gray-800">
-              {isMenuOpen ? <XIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            className="rounded-full border border-gray-200 p-2 text-gray-900 lg:hidden"
+          >
+            {isMenuOpen ? <FiX className="h-7 w-7" /> : <FiMenu className="h-7 w-7" />}
+          </button>
         </div>
       </header>
-      
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-lg text-gray-900 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out lg:hidden`}>
-        <div className="flex flex-col items-center justify-center h-full pt-20">
-            <nav className="flex flex-col items-center space-y-8">
-            {navLinks.map(link => (
-                <NavLink 
-                    key={link.to} 
-                    to={link.to}
-                    onClick={handleMobileLinkClick}
-                    isMobile
-                >
-                    {link.title}
-                </NavLink>
+
+      <div
+        className={`fixed inset-0 z-30 bg-white text-gray-950 transition-transform duration-300 lg:hidden ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex h-full flex-col justify-center px-8 pt-20">
+          <nav className="flex flex-col gap-7" aria-label="Mobile navigation">
+            {primaryNav.map((link) => (
+              <NavLink key={link.to} to={link.to} isMobile onClick={() => setIsMenuOpen(false)}>
+                {link.title}
+              </NavLink>
             ))}
-            </nav>
-          <div className="absolute bottom-10 text-center mt-12">
-            <div className="text-sm font-light">Call Us 24/7</div>
-            <a href="tel:+994553204281" className="font-semibold text-2xl hover:text-amber-300 transition-colors">
-                +994 55 320 42 81
+          </nav>
+          <div className="mt-12 border-t border-gray-200 pt-8">
+            <p className="text-sm font-semibold text-gray-500">Consultation line</p>
+            <a href={`tel:${contactInfo.mobile.replace(/\s/g, '')}`} className="mt-1 block text-2xl font-extrabold text-gray-950">
+              {contactInfo.mobile}
             </a>
           </div>
         </div>

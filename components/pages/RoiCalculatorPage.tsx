@@ -104,14 +104,22 @@ const RoiCalculatorPage: React.FC = () => {
   return (
     <>
       <PageHero
-        title="ROI Calculator"
-        subtitle="Estimate your potential savings and see how quickly a Sevali Energy VRU can pay for itself."
+        label="VRU ROI Tool"
+        title="Estimate the recovered value of vapor loss."
+        subtitle="This calculator stays focused on vapor recovery because VRU has the clearest direct fuel-recovery math. It is one tool inside Sevali’s broader station environmental and safety portfolio."
         backgroundImageUrl="https://images.unsplash.com/photo-1640653799824-a7457551c9c0?q=80&w=1920&auto=format&fit=crop"
       />
 
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+      <section className="sevali-section bg-gray-50">
+        <div className="sevali-container">
+          <div className="mx-auto mb-10 max-w-4xl">
+            <p className="sevali-kicker">Why VRU has its own tool</p>
+            <h2 className="sevali-heading-md mt-2">Fuel vapor loss can be translated into recoverable product.</h2>
+            <p className="sevali-copy mt-4">
+              The broader site covers environmental balance, oil-water separation, fuel economy, and safety. This calculator remains intentionally narrow so station operators can estimate one of the clearest commercial cases: vapor recovered back into sellable fuel.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-6xl gap-12 rounded-xl bg-white p-8 md:p-12 lg:grid-cols-2">
             {/* Form Section */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-2">Calculate Your Savings</h2>
@@ -150,7 +158,7 @@ const RoiCalculatorPage: React.FC = () => {
                     <input type="range" name="unitCost" value={inputs.unitCost} onChange={handleInputChange} min="50000" max="500000" step="1000" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500" />
                   </div>
                 </div>
-                <button type="submit" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 ease-in-out transform hover:scale-105">
+                <button type="submit" className="sevali-button sevali-button-primary w-full">
                   Calculate ROI
                 </button>
               </form>

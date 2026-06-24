@@ -1,96 +1,106 @@
-
 import React from 'react';
+import PageHero from '../PageHero';
+import { FiCheck } from 'react-icons/fi';
+import { contactInfo, proofPoints, solutionGroups, supportingServices } from '../../data/siteContent';
 
-const AboutPage: React.FC = () => {
-  return (
-    <div className="bg-white">
-      {/* New Integrated Hero Section */}
-      <section 
-        className="relative bg-cover bg-center text-white flex flex-col justify-center items-center" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1920&auto=format&fit=crop')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-black/30"></div>
-        <div className="relative z-10 text-center container mx-auto px-6 pt-32 pb-48">
-          <p className="text-amber-400 font-semibold tracking-widest mb-2">ABOUT US</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
-            Bringing Our Vision to Life
-            <br />
-            with Expertise and Dedication
-          </h1>
+const AboutPage: React.FC = () => (
+  <div className="sevali-page">
+    <PageHero
+      label="About Sevali"
+      title="Integrated solutions for water, energy, environment, and industry."
+      subtitle="Sevali Energy delivers advanced environmental technologies, sustainable energy solutions, and industrial innovation with a practical focus on cleaner, safer fuel-station operations."
+      backgroundImageUrl="/sevaliCOP29.jpeg"
+    />
+
+    <section className="sevali-section">
+      <div className="sevali-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p className="sevali-kicker">Company profile</p>
+          <h2 className="sevali-heading-md mt-2">From vapor recovery specialist to environmental balance partner.</h2>
         </div>
-        {/* Stats Bar overlaying the hero */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-5xl px-6 z-20">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-              <StatItem value="15+" label="Projects Done" />
-              <StatItem value="5+" label="Countries" />
-              <StatItem value="10+" label="Employees" />
-              <StatItem value="1" label="Global Office" />
-              <StatItem value="1M+" label="Liters Recovered" />
+        <div className="space-y-5 text-lg leading-8 text-gray-700">
+          <p>
+            Sevali works with international technology partners and solution providers to introduce reliable, efficient, and environmentally conscious systems to local and regional markets. The company supports businesses that need to optimize operations, reduce environmental impact, improve safety standards, and contribute to decarbonization goals.
+          </p>
+          <p>
+            Vapor recovery remains a strong proof point, but the expanded portfolio now includes environmental balance devices, water purification and wastewater treatment, oil-water separation, fuel-saving solutions, environmental remediation, carbon management consulting, and sustainable fire protection materials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-[#111827] py-16 text-white">
+      <div className="sevali-container grid gap-5 md:grid-cols-4">
+        {proofPoints.map((point) => (
+          <div key={point.label} className="border-t border-white/20 pt-5">
+            <p className="text-4xl font-extrabold text-amber-300">{point.value}</p>
+            <p className="mt-2 font-bold">{point.label}</p>
+            <p className="mt-1 text-sm leading-6 text-white/64">{point.note}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section className="sevali-section bg-white">
+      <div className="sevali-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p className="sevali-kicker">What we cover</p>
+          <h2 className="sevali-heading-md mt-2">A station-ready portfolio with broader industrial roots.</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {solutionGroups.map((solution) => (
+            <div key={solution.slug} className={`solution-accent-${solution.color} sevali-card p-5`}>
+              <solution.icon className="h-8 w-8 text-[color:var(--accent)]" />
+              <h3 className="mt-4 font-extrabold text-gray-950">{solution.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-gray-600">{solution.summary}</p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="sevali-section">
+      <div className="sevali-container grid gap-10 lg:grid-cols-2">
+        {supportingServices.map((service) => (
+          <article key={service.title} className="sevali-card p-7">
+            <service.icon className="h-10 w-10 text-amber-600" />
+            <h2 className="mt-5 text-2xl font-extrabold text-gray-950">{service.title}</h2>
+            <p className="mt-4 leading-7 text-gray-600">{service.summary}</p>
+            <ul className="mt-6 space-y-3">
+              {service.steps.map((step) => (
+                <li key={step} className="flex items-center gap-3 font-bold text-gray-900">
+                  <FiCheck className="h-5 w-5 text-emerald-600" />
+                  {step}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section className="sevali-section bg-white">
+      <div className="sevali-container rounded-xl bg-[#17202b] p-8 text-white md:p-12">
+        <p className="text-sm font-extrabold text-amber-300">Head office</p>
+        <div className="mt-5 grid gap-6 md:grid-cols-3">
+          <div>
+            <p className="text-white/60">Address</p>
+            <p className="mt-2 font-bold">{contactInfo.address}</p>
+          </div>
+          <div>
+            <p className="text-white/60">Phone</p>
+            <p className="mt-2 font-bold">{contactInfo.office}</p>
+            <p className="font-bold">{contactInfo.mobile}</p>
+          </div>
+          <div>
+            <p className="text-white/60">Email</p>
+            <a href={`mailto:${contactInfo.email}`} className="mt-2 block font-bold text-amber-300 hover:text-amber-200">
+              {contactInfo.email}
+            </a>
           </div>
         </div>
-      </section>
-
-      {/* Journey Story - with increased top padding to account for overlaid stats bar */}
-      <section className="pt-40 pb-24">
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-           <p className="text-amber-500 font-semibold tracking-widest mb-2">OUR JOURNEY</p>
-           <h2 className="text-4xl font-bold text-gray-800 mb-6">The Sevali Energy Story</h2>
-           <p className="text-gray-600 leading-relaxed">
-             At Sevali Energy, our journey began with a simple yet powerful vision: to transform the landscape of the energy sector by making it cleaner and more efficient. Founded by a team of passionate industry veterans, Sevali Energy was built on a foundation of innovation, integrity, and a relentless pursuit of excellence in vapor recovery technology. Our story is one of dedication and perseverance, growing from a specialized startup into a leading force that helps companies worldwide turn harmful emissions into valuable assets. We remain committed to our core values, driving the transition to a more sustainable future every step of the way.
-           </p>
-        </div>
-      </section>
-      
-      {/* Timeline / History */}
-      <section className="pb-24 bg-gray-50 pt-20">
-        <div className="container mx-auto px-6 space-y-20">
-
-          {/* Inception Vision */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop" 
-                alt="Looking up at modern skyscrapers against a clear blue sky, symbolizing ambition and a forward-thinking vision."
-                className="w-full h-[450px] object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Inception Vision:</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Sevali Energy was founded on a collective vision shared among seasoned professionals who sought to redefine excellence in the energy industry. With decades of combined experience, our founders established a company that prioritizes technological innovation, operational integrity, and an unwavering dedication to client success. This initial vision—to create smarter, more flexible energy systems—served as the driving force behind our creation and set the stage for our remarkable journey.
-              </p>
-            </div>
-          </div>
-
-          {/* Evolutionary Journey */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="md:order-2 rounded-2xl overflow-hidden shadow-lg">
-               <img 
-                src="https://images.unsplash.com/photo-1454779132693-e5cd0a216ed3?q=80&w=800&auto=format&fit=crop" 
-                alt="An industrial plant with complex piping and structures at dusk, representing growth, complexity, and evolution."
-                className="w-full h-[450px] object-cover"
-              />
-            </div>
-            <div className="md:order-1">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Evolutionary Journey:</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Over the years, Sevali Energy has evolved from a focused vapor recovery provider into a comprehensive energy solutions leader. Our journey is marked by patented technologies, successful large-scale projects, and strategic global expansion. By continuously optimizing our products and embracing new challenges, we have grown our team of experts and solidified our reputation for reliability. We look ahead with the same passion that fueled our inception, ready to engineer the sustainable energy solutions of tomorrow.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </div>
-  );
-};
-
-const StatItem = ({ value, label }: { value: string; label: string }) => (
-  <div>
-    <p className="text-4xl font-bold text-amber-500">{value}</p>
-    <p className="text-sm text-gray-500 uppercase tracking-wider mt-1">{label}</p>
+      </div>
+    </section>
   </div>
 );
 

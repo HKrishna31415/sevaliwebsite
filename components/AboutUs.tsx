@@ -1,6 +1,6 @@
 import React from 'react';
-import { CheckIcon } from './icons/CheckIcon';
-import { SunIcon } from './icons/SunIcon';
+import { FiCheck } from 'react-icons/fi';
+import { FaSun } from 'react-icons/fa6';
 
 const AboutUs: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const AboutUs: React.FC = () => {
             <img src="https://picsum.photos/id/1043/600/700" alt="Refinery" className="rounded-lg shadow-2xl w-full h-auto object-cover" />
             <div className="absolute top-12 left-0 -translate-x-1/2 bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center w-40">
               <div className="bg-amber-100 p-3 rounded-full mb-3">
-                <SunIcon className="w-8 h-8 text-amber-500" />
+                <FaSun className="w-8 h-8 text-amber-500" />
               </div>
               <p className="text-5xl font-bold text-amber-500">15+</p>
               <p className="text-gray-600 text-sm">Projects Effected</p>
@@ -31,19 +31,19 @@ const AboutUs: React.FC = () => {
             </p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-8">
               <div className="flex items-center">
-                <CheckIcon className="w-5 h-5 text-amber-500 mr-3" />
+                <FiCheck className="w-5 h-5 text-amber-500 mr-3" />
                 <span>Certified with ISO</span>
               </div>
                <div className="flex items-center">
-                <CheckIcon className="w-5 h-5 text-amber-500 mr-3" />
+                <FiCheck className="w-5 h-5 text-amber-500 mr-3" />
                 <span>Renewable Energy</span>
               </div>
                <div className="flex items-center">
-                <CheckIcon className="w-5 h-5 text-amber-500 mr-3" />
+                <FiCheck className="w-5 h-5 text-amber-500 mr-3" />
                 <span>Affordable Pricing</span>
               </div>
               <div className="flex items-center">
-                <CheckIcon className="w-5 h-5 text-amber-500 mr-3" />
+                <FiCheck className="w-5 h-5 text-amber-500 mr-3" />
                 <span>Many other certifications</span>
               </div>
             </div>

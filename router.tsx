@@ -3,6 +3,9 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import HomePage from './components/pages/HomePage';
 import AboutPage from './components/pages/AboutPage';
+import SolutionsPage from './components/pages/SolutionsPage';
+import IndustriesPage from './components/pages/IndustriesPage';
+import ResourcesPage from './components/pages/ResourcesPage';
 import HowItWorksPage from './components/pages/HowItWorksPage';
 import ProjectsPage from './components/pages/ProjectsPage';
 import MaintenancePage from './components/pages/MaintenancePage';
@@ -24,6 +27,18 @@ export const router = createBrowserRouter([
       {
         path: 'about',
         element: <AboutPage />,
+      },
+      {
+        path: 'solutions',
+        element: <SolutionsPage />,
+      },
+      {
+        path: 'industries',
+        element: <IndustriesPage />,
+      },
+      {
+        path: 'resources',
+        element: <ResourcesPage />,
       },
       {
         path: 'how-it-works',

@@ -1,13 +1,4 @@
 import React from 'react';
-import { Logo1Icon } from './icons/Logo1Icon';
-import { Logo2Icon } from './icons/Logo2Icon';
-import { Logo3Icon } from './icons/Logo3Icon';
-import { Logo4Icon } from './icons/Logo4Icon';
-import { Logo5Icon } from './icons/Logo5Icon';
-import { Logo6Icon } from './icons/Logo6Icon';
-import { Logo7Icon } from './icons/Logo7Icon';
-import { Logo8Icon } from './icons/Logo8Icon';
-import { Logo9Icon } from './icons/Logo9Icon';
 
 const LogoCard = ({ children }: { children: React.ReactNode }) => (
     <div className="bg-white p-6 rounded-lg border border-gray-200 flex items-center justify-center aspect-square transition-all duration-300 hover:shadow-xl hover:border-amber-400">

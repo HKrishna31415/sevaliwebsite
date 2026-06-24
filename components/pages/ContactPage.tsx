@@ -1,42 +1,123 @@
-
 import React from 'react';
 import PageHero from '../PageHero';
+import { contactInfo, solutionGroups } from '../../data/siteContent';
 
 const ContactPage: React.FC = () => (
-  <>
+  <div className="sevali-page">
     <PageHero
-      title="Contact Us"
-      subtitle="We're here to help. Reach out to us any time for questions, support, or a project consultation."
-      backgroundImageUrl="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=1920&auto=format&fit=crop"
+      label="Contact"
+      title="Tell us what your station needs to solve."
+      subtitle="Share the site challenge: vapor loss, runoff, soil contamination, emissions, fire readiness, or a broader environmental balance program."
+      backgroundImageUrl="/sevaliGETbooth.jpg"
     />
-    <div className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800">Get in Touch</h2>
-            <p className="text-gray-600 leading-relaxed mt-4">
-                You can call us any time at <a href="tel:+994553204281" className="font-semibold text-amber-500 hover:underline">+994 55 320 42 81</a> or fill out the form below and we'll get back to you as soon as possible.
+
+    <section className="sevali-section">
+      <div className="sevali-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <aside className="space-y-6">
+          <div className="sevali-card p-6">
+            <h2 className="text-2xl font-extrabold text-gray-950">Direct contact</h2>
+            <dl className="mt-6 space-y-5">
+              <div>
+                <dt className="text-sm font-bold text-gray-500">Office</dt>
+                <dd className="mt-1">
+                  <a href={`tel:${contactInfo.office.replace(/\s/g, '')}`} className="font-extrabold text-gray-950">
+                    {contactInfo.office}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm font-bold text-gray-500">Mobile</dt>
+                <dd className="mt-1">
+                  <a href={`tel:${contactInfo.mobile.replace(/\s/g, '')}`} className="font-extrabold text-gray-950">
+                    {contactInfo.mobile}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm font-bold text-gray-500">Email</dt>
+                <dd className="mt-1">
+                  <a href={`mailto:${contactInfo.email}`} className="font-extrabold text-gray-950">
+                    {contactInfo.email}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm font-bold text-gray-500">Address</dt>
+                <dd className="mt-1 font-extrabold text-gray-950">{contactInfo.address}</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="rounded-xl bg-[#111827] p-6 text-white">
+            <p className="font-extrabold text-amber-300">What to prepare</p>
+            <p className="mt-3 leading-7 text-white/72">
+              Station location, average fuel volume, known environmental or safety concerns, existing tanks/separators, and any compliance deadlines.
             </p>
-        </div>
-        <form className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
-            <input type="text" id="name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
-            <input type="email" id="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+        </aside>
+
+        <form className="sevali-card p-6 md:p-8">
+          <div className="grid gap-5 md:grid-cols-2">
+            <div>
+              <label htmlFor="name" className="block text-sm font-extrabold text-gray-900">
+                Name
+              </label>
+              <input id="name" type="text" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label htmlFor="company" className="block text-sm font-extrabold text-gray-900">
+                Company
+              </label>
+              <input id="company" type="text" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-extrabold text-gray-900">
+                Email
+              </label>
+              <input id="email" type="email" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-extrabold text-gray-900">
+                Phone
+              </label>
+              <input id="phone" type="tel" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+            </div>
           </div>
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Message</label>
-            <textarea id="message" rows={5} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+
+          <div className="mt-5">
+            <label htmlFor="interest" className="block text-sm font-extrabold text-gray-900">
+              Solution interest
+            </label>
+            <select id="interest" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500">
+              <option>Not sure yet - assess my station</option>
+              {solutionGroups.map((solution) => (
+                <option key={solution.slug}>{solution.title}</option>
+              ))}
+              <option>Carbon management consulting</option>
+            </select>
           </div>
-          <button type="submit" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-300 ease-in-out transform hover:scale-105">
-            Send Message
+
+          <div className="mt-5">
+            <label htmlFor="message" className="block text-sm font-extrabold text-gray-900">
+              Site challenge
+            </label>
+            <textarea
+              id="message"
+              rows={6}
+              className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500"
+              placeholder="Tell us about vapor loss, runoff, contaminated soil, fuel use, fire-safety needs, or compliance goals."
+            />
+          </div>
+
+          <button type="submit" className="sevali-button sevali-button-primary mt-6 w-full">
+            Send consultation request
           </button>
+          <p className="mt-4 text-center text-sm text-gray-500">
+            This form is frontend-only for now. For urgent requests, call or email Sevali directly.
+          </p>
         </form>
       </div>
-    </div>
-  </>
+    </section>
+  </div>
 );
 
 export default ContactPage;

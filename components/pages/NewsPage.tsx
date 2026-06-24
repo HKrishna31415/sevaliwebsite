@@ -1,127 +1,81 @@
 import React from 'react';
 import PageHero from '../PageHero';
 
-interface Post {
-  title: string;
-  date: string;
-  excerpt: string;
-  imageUrl: string;
-  objectPosition?: string; // Optional: for custom object-position classes like 'object-position-bottom'
-}
-
-const posts: Post[] = [
+const posts = [
   {
     title: 'Meeting with PSO seniors in Karachi',
     date: '2025-06-21',
-    excerpt:
-      'Sevali Energy held a productive meeting with PSO seniors in Karachi to discuss the VRU pilot project.',
+    excerpt: 'Sevali met with PSO leadership to discuss VRU deployment and broader environmental station modernization in Pakistan.',
     imageUrl: '/PSOSeniorsSevali.jpg',
     objectPosition: 'object-position-top',
+    tag: 'Partnership',
   },
   {
-    title: 'Sign MoU with Petroleum Institute of Pakistan regarding partnership for development VRU in Pakistan Market.',
+    title: 'MoU with Petroleum Institute of Pakistan',
     date: '2025-06-20',
-    excerpt:
-      'Sevali Energy signed a Memorandum of Understanding with the Petroleum Institute of Pakistan, formalizing a partnership for the development of Vapor Recovery Units (VRU) in the Pakistan market.',
+    excerpt: 'The partnership supports vapor recovery development in Pakistan and creates a path for expanded station environmental solutions.',
     imageUrl: '/PIPSevali.jpg',
     objectPosition: 'object-position-top',
+    tag: 'Market development',
   },
-  {
-    title: 'Sevali went to Global Energy Transition congress',
-    date: '2024-05-20',
-    excerpt:
-      'Sevali Energy participated in the Global Energy Transition Congress, showcasing innovative vapor recovery solutions and engaging with industry leaders.',
-    imageUrl: '/sevaliGET.jpg',
-  },
-  {
-    title: 'Sevali Meets Secretary Saif Anjum',
-    date: 'Apr 15, 2024',
-    excerpt: 'Sevali Energy held productive meetings with Secretary Saif Anjum of the Ministry of Industries & Production, Government of Pakistan, to discuss collaborations and advancements in energy solutions.',
-    imageUrl: '/SevaliPakistan.jpeg',
-    objectPosition: 'object-position-10-top',
-  },
-
   {
     title: 'Sevali at COP29',
     date: '2024-11-11',
-    excerpt:
-      'Sevali Energy participated in COP29, showcasing innovative solutions for a sustainable future and engaging with global leaders on climate action.',
+    excerpt: 'Sevali participated in COP29 conversations around practical climate technologies, emissions reduction, and sustainable operations.',
     imageUrl: '/sevaliCOP29.jpeg',
+    tag: 'Climate',
   },
   {
-    title: 'Sevali Meets Wafi/Shell of Pakistan',
+    title: 'Global Energy Transition Congress',
+    date: '2024-05-20',
+    excerpt: 'The team showcased vapor recovery and environmental technology capabilities to global energy-transition stakeholders.',
+    imageUrl: '/sevaliGET.jpg',
+    tag: 'Event',
+  },
+  {
+    title: 'Sevali meets Wafi/Shell of Pakistan',
     date: '2024-04-16',
-    excerpt:
-      'Sevali Energy held a significant meeting with Wafi to discuss potential collaborations and advancements in sustainable energy solutions.',
+    excerpt: 'A strategic meeting to explore collaborations around cleaner fuel retail, emissions reduction, and operational improvement.',
     imageUrl: '/SevaliWafi.jpeg',
+    tag: 'Partnership',
   },
   {
-    title: 'Sevali Kobia at Azerbaijan Convention',
-    date: '2024-06-01',
-    excerpt:
-      'Sevali Energy participated in the Azerbaijan Convention, showcasing innovative solutions and fostering international collaborations.',
-    imageUrl: '/azconventionsevali.png',
-  },
-  {
-    title: 'ME Pilot Project in Riyadh',
-    date: '2023-08-01',
-    excerpt:
-      'Sevali Energy has launched a significant pilot project in Riyadh, marking the beginning of commercial operations in the Middle East.',
-    imageUrl: '/MEpilotprojectsevali.jpg',
-  },
-  {
-    title: 'New OEM Facility',
+    title: 'OEM facility and technology network',
     date: '2024-02-20',
-    excerpt:
-      'Sevali Energy proudly announces the opening of its new OEM facility, enhancing production capabilities and innovation in vapor recovery solutions.',
+    excerpt: 'Sevali continues building supply and technology partnerships for recovery, environmental, and safety solutions.',
     imageUrl: '/sevaliOEMfactory.jpeg',
-  },
-  {
-    title: 'Jordan SGS',
-    date: '2023-09-15',
-    excerpt:
-      'Sevali Energy successfully completed SGS testing in Jordan, demonstrating compliance with international standards and quality assurance.',
-    imageUrl: '/jordansgstest.jpg',
+    tag: 'Operations',
   },
 ];
 
-const NewsPage: React.FC = () => {
-  return (
-    <>
-      <PageHero
-        title="News & Blog"
-        subtitle="Latest updates, milestones, and insights from Sevali Energy."
-        backgroundImageUrl="/gasstationfuture.png"
-      />
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <article key={post.title} className="rounded-xl overflow-hidden border border-gray-200 shadow-sm group bg-white transform hover:-translate-y-0.5 transition-shadow hover:shadow-lg">
-              <div className="h-56 w-full overflow-hidden">
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className={`w-full h-full object-cover ${post.objectPosition || ''} transform group-hover:scale-105 transition-transform duration-300`}
-                />
+const NewsPage: React.FC = () => (
+  <div className="sevali-page">
+    <PageHero
+      label="News"
+      title="Partnerships, project milestones, and climate conversations."
+      subtitle="Sevali’s updates show the company growing from VRU deployment into a wider station environmental and safety platform."
+      backgroundImageUrl="/sevaliGET.jpg"
+    />
+    <section className="sevali-section">
+      <div className="sevali-container grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <article key={post.title} className="sevali-card overflow-hidden">
+            <img src={post.imageUrl} alt={post.title} className={`h-56 w-full object-cover ${post.objectPosition || ''}`} />
+            <div className="p-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-extrabold text-amber-800">{post.tag}</span>
+                <time className="text-sm font-bold text-gray-500" dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+                </time>
               </div>
-              <div className="p-6">
-                <div className="text-amber-600 text-xs font-semibold tracking-widest mb-2">
-                  {new Date(post.date).toLocaleDateString(undefined, {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric',
-                  })}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
-                <button className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-600 font-semibold text-sm">Read more</button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-};
+              <h2 className="mt-4 text-2xl font-extrabold text-gray-950">{post.title}</h2>
+              <p className="mt-3 leading-7 text-gray-600">{post.excerpt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+);
 
 export default NewsPage;

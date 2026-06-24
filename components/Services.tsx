@@ -1,9 +1,7 @@
 import React from 'react';
-import { GasStationIcon } from './icons/GasStationIcon';
-import { AviationFuelIcon } from './icons/AviationFuelIcon';
-import { FactoryIcon } from './icons/FactoryIcon';
-import { ChemicalsIcon } from './icons/ChemicalsIcon';
-import { ArrowRightIcon } from './icons/ArrowRightIcon';
+import { FiArrowRight } from 'react-icons/fi';
+import { FaGasPump, FaIndustry, FaPlaneDeparture } from 'react-icons/fa6';
+import { MdScience } from 'react-icons/md';
 
 interface ServiceCardProps {
   // FIX: Changed `icon` prop to be a component type (`React.ComponentType`) instead of a React element.
@@ -18,12 +16,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
     <div className="bg-white border border-gray-200 p-8 rounded-xl flex flex-col text-center text-gray-800 h-full shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 transition">
       <div className="text-amber-500 mb-6 flex-shrink-0">
         {/* FIX: Instantiate the icon component directly with desired props instead of using React.cloneElement. */}
-        <Icon className="w-16 h-16 mx-auto" strokeWidth={1} />
+        <Icon className="w-16 h-16 mx-auto" />
       </div>
       <h3 className="text-xl font-semibold tracking-wide mb-3 text-gray-900">{title}</h3>
       <p className="text-gray-600 text-sm mb-6 flex-grow">{description}</p>
       <button className="mt-auto bg-amber-600 hover:bg-amber-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors self-center">
-        <ArrowRightIcon className="w-5 h-5" />
+        <FiArrowRight className="w-5 h-5" />
       </button>
     </div>
   );
@@ -33,22 +31,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
 const Services: React.FC = () => {
   const services = [
     {
-      icon: GasStationIcon,
+      icon: FaGasPump,
       title: 'Gas station tanks',
       description: 'Recover gasoline and save money.'
     },
     {
-      icon: AviationFuelIcon,
+      icon: FaPlaneDeparture,
       title: 'Aviation Fuel Tanks',
       description: 'Works for JP54 and Avgas.'
     },
     {
-      icon: FactoryIcon,
+      icon: FaIndustry,
       title: 'Factory Oil Storage',
       description: 'Reduce leakage before and after transport.'
     },
     {
-      icon: ChemicalsIcon,
+      icon: MdScience,
       title: 'Chemicals',
       description: 'Reduce ethanol evaporation.'
     },

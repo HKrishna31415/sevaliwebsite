@@ -1,12 +1,10 @@
 import React from 'react';
-import { RefineryBgIcon } from './icons/RefineryBgIcon';
-import { SignatureIcon } from './icons/SignatureIcon';
 
 const WelcomeSection: React.FC = () => {
     return (
         <section className="relative bg-white py-24 overflow-hidden">
             <div className="absolute inset-0 z-0">
-                <RefineryBgIcon className="w-full h-full text-gray-100" />
+                <img src="/gasstationfuture.png" alt="" className="h-full w-full object-cover opacity-[0.06]" />
             </div>
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -37,7 +35,7 @@ const WelcomeSection: React.FC = () => {
                             <div>
                                 <p className="font-bold text-amber-700">Yalçin Aliyev</p>
                                 <div className="w-12 h-0.5 bg-amber-500 my-1"></div>
-                                <SignatureIcon className="h-8 text-amber-700" />
+                                <p className="text-sm font-semibold text-gray-500">Founder & CEO</p>
                             </div>
                         </div>
                     </div>
