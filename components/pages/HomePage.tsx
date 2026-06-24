@@ -33,6 +33,51 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      <section className="sevali-section bg-white">
+        <div className="sevali-container grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
+          <aside className="rounded-2xl bg-[#111827] p-7 text-white shadow-xl md:p-9">
+            <div className="flex items-center gap-5">
+              <img
+                src="/yalchin_image.jpg"
+                alt="Yalçin Aliyev"
+                className="h-20 w-20 shrink-0 rounded-full border-2 border-amber-300 object-cover"
+              />
+              <div>
+                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-amber-300">CEO perspective</p>
+                <p className="mt-1 text-xl font-extrabold">Yalçin Aliyev</p>
+                <p className="text-sm text-white/64">Founder & CEO</p>
+              </div>
+            </div>
+            <blockquote className="mt-8 text-2xl font-extrabold leading-snug md:text-3xl">
+              "Harnessing innovation to turn vapor into value, safeguarding our planet one molecule at a time."
+            </blockquote>
+            <p className="mt-6 leading-7 text-white/72">
+              That same mindset now extends across the station environment: vapor recovery, soil and groundwater protection, water separation, emissions reduction, and safety readiness.
+            </p>
+          </aside>
+
+          <div className="sevali-card overflow-hidden bg-white">
+            <div className="aspect-video bg-black">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/560Ph0VHnw4"
+                title="Sevali Energy vapor recovery video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <div className="p-7 md:p-8">
+              <p className="sevali-kicker">Video explainer</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-gray-950">See the recovery story in motion.</h2>
+              <p className="mt-4 text-lg leading-8 text-gray-700">
+                The video gives visitors a visual entry point into Sevali’s vapor recovery foundation, then the surrounding page connects that technology to the broader environmental balance and safety portfolio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#111827] py-16 text-white">
         <div className="sevali-container grid gap-5 md:grid-cols-4">
           {proofPoints.map((point) => (
