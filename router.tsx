@@ -4,6 +4,7 @@ import App from './App';
 import HomePage from './components/pages/HomePage';
 import AboutPage from './components/pages/AboutPage';
 import SolutionsPage from './components/pages/SolutionsPage';
+import EnvironmentalBalancePage from './components/pages/EnvironmentalBalancePage';
 import IndustriesPage from './components/pages/IndustriesPage';
 import ResourcesPage from './components/pages/ResourcesPage';
 import HowItWorksPage from './components/pages/HowItWorksPage';
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: 'solutions',
         element: <SolutionsPage />,
+      },
+      {
+        path: 'environmental-balance',
+        element: <EnvironmentalBalancePage />,
       },
       {
         path: 'industries',

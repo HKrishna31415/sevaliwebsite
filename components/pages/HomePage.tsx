@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
             {solutionGroups.map((solution) => (
               <Link
                 key={solution.slug}
-                to={`/solutions#${solution.slug}`}
+                to={solution.slug === 'station-environmental-balance' ? '/environmental-balance' : `/solutions#${solution.slug}`}
                 className={`solution-accent-${solution.color} sevali-card group flex min-h-[18rem] flex-col overflow-hidden hover:-translate-y-1 hover:border-[color:var(--accent)] hover:text-inherit transition`}
               >
                 <img src={solution.image} alt="" className="h-28 w-full object-cover" />
@@ -147,7 +147,10 @@ const HomePage: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                  <Link to={`/solutions#${solution.slug}`} className="sevali-button sevali-button-primary mt-8">
+                  <Link
+                    to={solution.slug === 'station-environmental-balance' ? '/environmental-balance' : `/solutions#${solution.slug}`}
+                    className="sevali-button sevali-button-primary mt-8"
+                  >
                     Read the section
                     <FiArrowRight className="h-5 w-5" />
                   </Link>

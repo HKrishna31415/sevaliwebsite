@@ -74,7 +74,16 @@ const Footer: React.FC = () => {
               <h3 className="mb-4 font-bold text-white">Solutions</h3>
               <ul className="space-y-3 text-sm">
                 {solutionGroups.map((solution) => (
-                  <FooterLink key={solution.slug} to={`/solutions#${solution.slug}`}>
+                  <FooterLink
+                    key={solution.slug}
+                    to={
+                      solution.slug === 'station-environmental-balance'
+                        ? '/environmental-balance'
+                        : solution.slug === 'vapor-recovery'
+                          ? '/how-it-works'
+                          : `/solutions#${solution.slug}`
+                    }
+                  >
                     {solution.shortTitle}
                   </FooterLink>
                 ))}

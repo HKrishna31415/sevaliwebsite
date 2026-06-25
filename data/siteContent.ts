@@ -26,6 +26,8 @@ export const contactInfo = {
 export const primaryNav = [
   { to: '/', title: 'Home' },
   { to: '/solutions', title: 'Solutions' },
+  { to: '/environmental-balance', title: 'EBD' },
+  { to: '/how-it-works', title: 'VRU' },
   { to: '/industries', title: 'Industries' },
   { to: '/projects', title: 'Projects' },
   { to: '/resources', title: 'Resources' },

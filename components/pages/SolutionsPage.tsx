@@ -77,6 +77,12 @@ const SolutionsPage: React.FC = () => {
                         ))}
                       </ul>
                     </div>
+                    {solution.slug === 'station-environmental-balance' && (
+                      <Link to="/environmental-balance" className="sevali-button sevali-button-primary mt-8">
+                        Learn more
+                        <FiArrowRight className="h-5 w-5" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </article>
@@ -104,7 +110,7 @@ const SolutionsPage: React.FC = () => {
               ))}
             </div>
             <Link to="/how-it-works" className="sevali-button sevali-button-primary mt-8">
-              Open full technology page
+              Learn more
               <FiArrowRight className="h-5 w-5" />
             </Link>
           </div>
