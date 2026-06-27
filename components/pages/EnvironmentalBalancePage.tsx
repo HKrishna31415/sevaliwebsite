@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../PageHero';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
+import { owsPerformanceSpecs, owsSystemAdvantages } from '../../data/siteContent';
 import {
   FaBottleWater,
   FaChartLine,
@@ -140,6 +141,46 @@ const proofSignals = [
   'Documented use cases cover greenhouse gas and odor reduction, wastewater treatment, hard-water treatment, soil remediation, agriculture, aquaculture, and oil infrastructure.',
 ];
 
+const miamiTestPhotos = [
+  {
+    src: '/miami-ebd-station-overview.jpg',
+    title: 'Station context',
+    caption: 'Fuel-station forecourt and landscaped perimeter selected for field placement.',
+  },
+  {
+    src: '/miami-ebd-core-drilling.jpg',
+    title: 'Paved-area access',
+    caption: 'Core drilling through pavement to place the EBD sensor near impacted station infrastructure.',
+  },
+  {
+    src: '/miami-ebd-paved-placement.jpg',
+    title: 'Paved placement',
+    caption: 'Sensor positioned below a paved surface before the access point is closed.',
+  },
+  {
+    src: '/miami-ebd-ground-placement.jpg',
+    title: 'Soil placement',
+    caption: 'Placement in landscaped soil to support evaluation around grass, curb, and runoff-adjacent areas.',
+  },
+  {
+    src: '/miami-ebd-soil-placement.jpg',
+    title: 'Hand placement',
+    caption: 'EBD sensor placed by hand after the test location is prepared.',
+  },
+  {
+    src: '/miami-ebd-paved-marker.jpg',
+    title: 'Marked test point',
+    caption: 'Marked forecourt point used to guide placement and future inspection reference.',
+  },
+];
+
+const miamiTestPoints = [
+  'Multiple sensor placements across paved and landscaped station areas.',
+  'Core-drilled access points for paved forecourt testing.',
+  'Soil placements near grass, curb edges, and station runoff paths.',
+  'Field photos document installation context for future monitoring and client review.',
+];
+
 const EnvironmentalBalancePage: React.FC = () => (
   <div className="sevali-page">
     <PageHero
@@ -156,6 +197,9 @@ const EnvironmentalBalancePage: React.FC = () => (
         <Link to="/solutions" className="sevali-button border border-white/40 text-white hover:bg-white/10 hover:text-white">
           Back to all solutions
         </Link>
+        <a href="#miami-ebd-test" className="sevali-button border border-white/40 text-white hover:bg-white/10 hover:text-white">
+          View Miami field test
+        </a>
       </div>
     </PageHero>
 
@@ -182,6 +226,38 @@ const EnvironmentalBalancePage: React.FC = () => (
               Best fit: operators who need a practical environmental upgrade before a problem becomes a shutdown, complaint, or expensive excavation project.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="sevali-section">
+      <div className="sevali-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div>
+          <p className="sevali-kicker">EBD + OWS</p>
+          <h2 className="sevali-heading-md mt-2">Environmental balance works best when runoff is controlled too.</h2>
+          <p className="sevali-copy mt-5">
+            EBD supports soil, water, odor, sludge, and long-running remediation conditions around the station. Oil-water separation handles the first line of defense for contaminated runoff from drains, wash areas, spills, and stormwater. Together, they give operators a stronger station-wide environmental plan.
+          </p>
+          <Link to="/solutions#oil-water-separation" className="sevali-button sevali-button-primary mt-7">
+            Learn about OWS
+            <FiArrowRight className="h-5 w-5" />
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {owsPerformanceSpecs.slice(0, 2).map((spec) => (
+            <div key={spec.title} className="rounded-xl bg-white p-5">
+              <p className="text-3xl font-extrabold text-cyan-800">{spec.label}</p>
+              <h3 className="mt-3 font-extrabold text-gray-950">{spec.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-gray-700">{spec.description}</p>
+            </div>
+          ))}
+          {owsSystemAdvantages.slice(0, 2).map((advantage) => (
+            <div key={advantage.title} className="rounded-xl bg-white p-5">
+              <FaDroplet className="h-7 w-7 text-cyan-700" />
+              <h3 className="mt-4 font-extrabold text-gray-950">{advantage.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-gray-700">{advantage.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -263,6 +339,63 @@ const EnvironmentalBalancePage: React.FC = () => (
             <FiArrowRight className="h-5 w-5" />
           </Link>
         </aside>
+      </div>
+    </section>
+
+    <section id="miami-ebd-test" className="sevali-section scroll-mt-28">
+      <div className="sevali-container">
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <p className="sevali-kicker">Miami station field test</p>
+            <h2 className="sevali-heading-md mt-2">EBD sensor placement across paved and landscaped station zones.</h2>
+          </div>
+          <div>
+            <p className="sevali-copy">
+              This field test documents how Environmental Balance Device sensors can be embedded in different station conditions: paved forecourt areas, grass and soil zones, curb edges, and runoff-adjacent locations. The goal is to create a practical placement record before long-term monitoring begins.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {['Paved forecourt', 'Landscaped soil', 'Core-drilled access', 'Monitoring reference points'].map((tag) => (
+                <span key={tag} className="rounded-full bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-900">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1.18fr_0.82fr]">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {miamiTestPhotos.map((photo, index) => (
+              <figure key={photo.src} className={`sevali-card overflow-hidden bg-white ${index === 0 ? 'sm:col-span-2' : ''}`}>
+                <img src={photo.src} alt={photo.caption} className={`${index === 0 ? 'h-[26rem]' : 'h-72'} w-full object-cover`} />
+                <figcaption className="p-5">
+                  <p className="font-extrabold text-gray-950">{photo.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-gray-700">{photo.caption}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <aside className="h-fit rounded-2xl bg-[#111827] p-7 text-white md:p-8">
+            <p className="text-sm font-extrabold text-amber-300">Test record</p>
+            <h3 className="mt-3 text-3xl font-extrabold">What the Miami placement shows.</h3>
+            <p className="mt-4 leading-7 text-white/72">
+              The test is useful because it shows installability in real station surfaces, not only idealized diagrams. It gives operators a concrete view of how EBD sensors can be positioned around the actual problem areas they already manage.
+            </p>
+            <div className="mt-7 space-y-4">
+              {miamiTestPoints.map((point) => (
+                <div key={point} className="flex gap-3 text-sm font-bold leading-6 text-white/82">
+                  <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
+                  {point}
+                </div>
+              ))}
+            </div>
+            <Link to="/contact" className="sevali-button sevali-button-amber mt-8">
+              Discuss a field test
+              <FiArrowRight className="h-5 w-5" />
+            </Link>
+          </aside>
+        </div>
       </div>
     </section>
 

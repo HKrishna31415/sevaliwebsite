@@ -83,11 +83,12 @@ export const solutionGroups = [
       'Below-ground and above-ground coalescing oil-water separation systems help stations treat hydrocarbon-contaminated water while using local tank infrastructure.',
     details: [
       'Retrofittable kits integrate with new or existing steel and concrete tanks, above or below ground.',
-      'Removes free non-emulsified oil, hydrocarbons, diesel, gasoline, and fuels to below 5 PPM in specified systems.',
-      'Supports flow capacities from 50 to over 1,100 GPM based on site requirements.',
-      'Maintenance can be conducted above ground, avoiding confined-space entry.',
+      'Removes free non-emulsified oil, hydrocarbons, diesel, gasoline, and fuels to below 5 PPM in specified systems, supporting U.S. requirements and the stricter EN858 European standard.',
+      'Supports treatment capacities from 15 GPM to more than 1,600 GPM, with multiple units installable side by side for higher flow requirements.',
+      'Uses washable, reusable coalescing cartridges instead of bulky plate packs, so operators can remove cartridges by hand from above ground.',
+      'Maintenance can be conducted above ground, avoiding confined-space entry and reducing the need to empty oil and water from the tank before service.',
     ],
-    outcomes: ['Cleaner discharge', 'Lower shipping and retrofit cost', 'No electrical power requirement', 'Fail-safe discharge protection'],
+    outcomes: ['Cleaner discharge', 'Lower VAC-truck cost', 'Safer above-ground maintenance', 'Fail-safe discharge protection'],
     image: '/proj_6.png',
   },
   {
@@ -143,6 +144,128 @@ export const vruStorageFacilities = {
   ],
   proof: 'A typical gasoline operation losing 0.1% to 1% of monthly volume through vaporization can turn preventable loss into recoverable value when the system is sized and operated correctly.',
 };
+
+export const owsStationChallenges = [
+  {
+    title: 'High maintenance cost',
+    description:
+      'Conventional plate-pack separators are not set-and-forget systems. Trapped oily sludge often requires frequent vacuum-truck cleanout and expensive hazardous-waste disposal.',
+  },
+  {
+    title: 'Plate-pack cleaning burden',
+    description:
+      'Coalescing plates can become coated in grime, forcing operators to remove and power-wash internal parts before the separator performs properly again.',
+  },
+  {
+    title: 'Emulsion failure',
+    description:
+      'Detergents, car-wash soaps, and some biofuel conditions can mix oil and water into emulsions that gravity-only separators cannot reliably separate.',
+  },
+  {
+    title: 'Storm-flood vulnerability',
+    description:
+      'A heavy downpour can push water through an undersized separator too quickly, flushing previously trapped oil downstream before gravity separation can work.',
+  },
+  {
+    title: 'Confined-space safety risk',
+    description:
+      'Underground separator vaults can contain petroleum vapors and low oxygen, making tank entry dangerous without specialized training and monitoring.',
+  },
+];
+
+export const owsSystemAdvantages = [
+  {
+    title: 'EcoLine B cartridge design',
+    description:
+      'EcoLine B Series systems use easy-to-handle coalescing cartridges instead of bulky plate packs, allowing one operator to remove washable cartridges from above ground without entering the tank.',
+  },
+  {
+    title: 'Automatic oil draw-off',
+    description:
+      'The optional mechanical ADD oil skimmer collects separated oil from the water surface and drains it by gravity into a pure-oil collection tank, reducing mixed oily-water disposal.',
+  },
+  {
+    title: 'Pure recovered oil value',
+    description:
+      'The ADD system is designed to deliver very high skimmed-oil purity, allowing oil recyclers to remove collected oil more economically than water-heavy VAC-truck waste.',
+  },
+  {
+    title: 'Free and emulsified oil options',
+    description:
+      'The EcoLine B Ecosorp configuration can be evaluated where sites need treatment for free oil plus chemically or mechanically emulsified oil from soaps, detergents, or wash activity.',
+  },
+  {
+    title: '100-year storm sizing',
+    description:
+      'Systems can be sized around the local 100-year maximum storm event, giving stations a practical path to oversize treatment flow for flash-flood conditions.',
+  },
+  {
+    title: 'Catastrophic spill protection',
+    description:
+      'An upstream Oil Draw Off system can divert and store high volumes of pure oil during spill events, helping prevent downstream contamination and cleanup liability.',
+  },
+  {
+    title: 'Mechanical shut-off and alarms',
+    description:
+      'The system includes a mechanical automatic shut-off valve and can be equipped with AC or DC alarms with internet-based notifications for tanks requiring attention.',
+  },
+  {
+    title: 'Retrofit flexibility',
+    description:
+      'Units can be installed or retrofitted in new or existing concrete, carbon steel, fiberglass, single-wall, or double-wall tanks in common round, square, or rectangular shapes.',
+  },
+];
+
+export const owsPerformanceSpecs = [
+  {
+    label: '<5 mg/L',
+    title: 'Free-oil discharge target',
+    description:
+      'EcoLine B is documented for residual free petroleum content below 5 mg/L in suitable non-emulsified oil applications, exceeding EN858 performance expectations.',
+  },
+  {
+    label: '0.1 mg/L',
+    title: 'EcoSorp polishing target',
+    description:
+      'EcoSorp can be evaluated as a downstream adsorption stage for small amounts of free, mechanically emulsified, or chemically emulsified oil when very low hydrocarbon discharge is required.',
+  },
+  {
+    label: '16-1,600 GPM',
+    title: 'Standard flow range',
+    description:
+      'The EcoLine B model family spans 16 GPM to 1,600 GPM, with larger or parallel configurations evaluated for higher-flow projects.',
+  },
+  {
+    label: '30-50%',
+    title: 'Potential maintenance savings',
+    description:
+      'Brochure guidance cites annual maintenance cost savings of roughly 30% to 50% compared with conventional separator systems, depending on site conditions.',
+  },
+];
+
+export const owsTechnicalNotes = [
+  'Two-step treatment combines gravity separation with enhanced coalescing media for droplets too small to separate by gravity alone.',
+  'An optional upstream grit chamber removes solids and helps stabilize temperature and oil-concentration fluctuations before separation.',
+  'The coalescing media is a durable reticular polyurethane foam cartridge that can be rinsed and reinstalled during routine service.',
+  'EcoLine B systems use stainless steel grade 304 and high-grade polyethylene components, with permanent operating temperature documented from above freezing to 158 F / 70 C.',
+  'Routine guidance calls for early visual inspection during startup, then maintenance intervals adjusted to the actual station load.',
+  'The outlet spill-control valve closes when maximum oil storage capacity is reached, and can be paired with an optional oil-level alarm.',
+];
+
+export const ecoSorpNotes = [
+  'EcoSorp is intended as a final treatment element after a grit chamber and high-efficiency oil-water separator.',
+  'The adsorption media physically binds oil particles that are too small for gravity separation and can hold roughly 9 to 10 times its own weight in hydrocarbons and petroleum byproducts.',
+  'Media condition is visually trackable: new media is bright white, then turns yellow or brown as hydrocarbons are adsorbed.',
+  'Inspection is typically monthly after startup and after non-routine events, with replacement intervals often in the 3 to 4 month range depending on inlet concentration.',
+  'Detailed water analysis should be reviewed for pH outside the 6 to 8 range, high chloride levels, heavy suspended solids, or other conditions that may impede adsorption performance.',
+];
+
+export const addDeviceSpecs = [
+  'Patented mechanical ADD DN50 device can retrofit into EcoLine A, EcoLine B, XL Panel, or suitable third-party gravity separators.',
+  'The device activates when the oil layer reaches approximately 50 to 60 mm / 2.4 in and drains separated oil through a DN50 outlet.',
+  'Maximum oil draw-off flow is documented up to 0.25 L/s / 4.0 GPM depending on project parameters.',
+  'The collected oil is documented as 99.7% free of water, turning separated oil from disposal waste into a more practical recycling stream.',
+];
 
 export const supportingServices = [
   {

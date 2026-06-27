@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../PageHero';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
-import { solutionGroups, supportingServices, vruStorageFacilities } from '../../data/siteContent';
+import {
+  addDeviceSpecs,
+  ecoSorpNotes,
+  owsPerformanceSpecs,
+  owsStationChallenges,
+  owsSystemAdvantages,
+  owsTechnicalNotes,
+  solutionGroups,
+  supportingServices,
+  vruStorageFacilities,
+} from '../../data/siteContent';
 import { VruDiagram } from '../VruDiagram';
 
 const SolutionsPage: React.FC = () => {
@@ -217,6 +227,84 @@ const SolutionsPage: React.FC = () => {
                               </li>
                             ))}
                           </ul>
+                        </div>
+                      )}
+                      {solution.slug === 'oil-water-separation' && (
+                        <div className="mt-8 space-y-6">
+                          <div className="grid gap-4 md:grid-cols-4">
+                            {owsPerformanceSpecs.map((spec) => (
+                              <div key={spec.title} className="rounded-xl bg-white p-4 ring-1 ring-cyan-100">
+                                <p className="text-2xl font-extrabold text-cyan-800">{spec.label}</p>
+                                <h4 className="mt-2 text-sm font-extrabold text-gray-950">{spec.title}</h4>
+                                <p className="mt-2 text-xs leading-5 text-gray-700">{spec.description}</p>
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="rounded-xl bg-cyan-50 p-5">
+                            <p className="text-sm font-extrabold text-cyan-900">Why conventional plate-pack OWS units fail stations</p>
+                            <div className="mt-5 grid gap-4 md:grid-cols-2">
+                              {owsStationChallenges.map((challenge) => (
+                                <div key={challenge.title} className="rounded-lg bg-white p-4">
+                                  <h4 className="font-extrabold text-gray-950">{challenge.title}</h4>
+                                  <p className="mt-2 text-sm leading-6 text-gray-700">{challenge.description}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="rounded-xl bg-gray-950 p-5 text-white">
+                            <p className="text-sm font-extrabold text-cyan-200">EcoLine B advantages</p>
+                            <div className="mt-5 grid gap-4 md:grid-cols-2">
+                              {owsSystemAdvantages.map((advantage) => (
+                                <div key={advantage.title} className="flex gap-3">
+                                  <FiCheck className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
+                                  <div>
+                                    <h4 className="font-extrabold">{advantage.title}</h4>
+                                    <p className="mt-1 text-sm leading-6 text-white/72">{advantage.description}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="grid gap-5 lg:grid-cols-3">
+                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
+                              <p className="font-extrabold text-gray-950">System design notes</p>
+                              <ul className="mt-4 space-y-3">
+                                {owsTechnicalNotes.map((note) => (
+                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
+                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                                    <span>{note}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
+                              <p className="font-extrabold text-gray-950">EcoSorp adsorption stage</p>
+                              <ul className="mt-4 space-y-3">
+                                {ecoSorpNotes.map((note) => (
+                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
+                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                                    <span>{note}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
+                              <p className="font-extrabold text-gray-950">ADD oil skimmer specs</p>
+                              <ul className="mt-4 space-y-3">
+                                {addDeviceSpecs.map((note) => (
+                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
+                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                                    <span>{note}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
