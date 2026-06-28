@@ -14,8 +14,8 @@ const ContactPage: React.FC = () => {
   <div className="sevali-page">
     <PageHero
       label="Contact"
-      title="Tell us what your station needs to solve."
-      subtitle="Share the site challenge: vapor loss, runoff, soil contamination, emissions, fire readiness, or a broader environmental balance program."
+      title="Tell us what your site needs to solve."
+      subtitle="Share the sector and the site challenge: soil, water, odor, sludge, corrosion, vapor loss, runoff, emissions, efficiency, safety, or a broader EBD program."
       backgroundImageUrl="/sevaliGETbooth.jpg"
     />
 
@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
           <div className="rounded-xl bg-[#111827] p-6 text-white">
             <p className="font-extrabold text-amber-300">What to prepare</p>
             <p className="mt-3 leading-7 text-white/72">
-              Station location, average fuel volume, known environmental or safety concerns, existing tanks/separators, and any compliance deadlines.
+              Site location, sector, operating conditions, known environmental or efficiency concerns, existing tanks or water systems, photos, and any compliance deadlines.
             </p>
           </div>
         </aside>
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
               Solution interest
             </label>
             <select id="interest" name="interest" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500">
-              <option>Not sure yet - assess my station</option>
+              <option>Not sure yet - assess my site</option>
               {solutionGroups.map((solution) => (
                 <option key={solution.slug}>{solution.title}</option>
               ))}
@@ -126,7 +126,7 @@ const ContactPage: React.FC = () => {
               rows={6}
               required
               className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500"
-              placeholder="Tell us about vapor loss, runoff, contaminated soil, fuel use, fire-safety needs, or compliance goals."
+              placeholder="Tell us about the sector, site condition, soil or water concerns, odor, sludge, corrosion, vapor loss, fuel use, safety needs, or compliance goals."
             />
           </div>
 

@@ -32,9 +32,9 @@ const MaintenancePage: React.FC = () => {
   return (
     <div className="sevali-page">
       <PageHero
-        label="Station Care"
-        title="Maintenance guidance for a broader station solution stack."
-        subtitle="The old maintenance page was VRU-only. This guide keeps VRU care while adding OWS, environmental balance, and fire-safety operating rhythms."
+        label="System Care"
+        title="Maintenance guidance for environmental and efficiency systems."
+        subtitle="This guide keeps VRU care while adding OWS, environmental balance, and fire-safety operating rhythms for broader site programs."
         backgroundImageUrl="/sevaliOEMfactory.jpeg"
       />
 

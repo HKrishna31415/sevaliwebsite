@@ -3,38 +3,75 @@ import { Link } from 'react-router-dom';
 import PageHero from '../PageHero';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import {
-  addDeviceSpecs,
-  ecoSorpNotes,
   owsPerformanceSpecs,
-  owsStationChallenges,
-  owsSystemAdvantages,
-  owsTechnicalNotes,
   solutionGroups,
+  solutionPillars,
   supportingServices,
-  vruStorageFacilities,
 } from '../../data/siteContent';
-import { VruDiagram } from '../VruDiagram';
 
 const SolutionsPage: React.FC = () => {
   const [openSlug, setOpenSlug] = useState(solutionGroups[0].slug);
-  const vruSteps = [
-    'Fuel is transferred into the station storage tank.',
-    'Displaced hydrocarbon vapor is captured instead of vented.',
-    'The VRU processes vapor through compression, separation, and condensation.',
-    'Recovered product returns to the tank as usable gasoline.',
+  const fireSafetySolution = solutionGroups.find((solution) => solution.slug === 'fire-safety');
+  const fireSafetyApplications = [
+    'Fuel-station electrical rooms',
+    'Forecourt and canopy cable routes',
+    'Tank-farm control cable trays',
+    'Industrial buildings and warehouses',
+    'Service bays and maintenance areas',
+    'Commercial electrical risers',
+  ];
+  const fireSafetyMaterials = [
+    {
+      title: 'Stabiterm-300 mesh',
+      description: 'Flexible intumescent mesh wrap for electrical cables, cable lines, and cable trays. It forms a thermal char layer under extreme heat.',
+    },
+    {
+      title: 'Stabiterm-225 coating',
+      description: 'Water-borne cable coating for separately laid cables or bundles where a coated fire-protection layer is preferred.',
+    },
+    {
+      title: 'Stabiterm-008 sealant',
+      description: 'Fire-resistant sealant for cable penetrations through walls, ceilings, partitions, and fire barriers.',
+    },
+    {
+      title: 'Site safety support',
+      description: 'Specification support for fire class, cable routing, surface exposure, installation method, and inspection rhythm.',
+    },
+  ];
+  const fireSafetyProof = [
+    {
+      label: '90 min',
+      title: 'Circuit integrity',
+      description: 'IEC 60331-21 APPLUS+ test maintained cable circuit integrity for 90 minutes plus a cooling period under the tested setup.',
+    },
+    {
+      label: '0.6 m',
+      title: 'Carbonized extension',
+      description: 'EN 60332-3-22 Category A test result for protected cable, below the 2.5 m limit in the referenced report.',
+    },
+    {
+      label: '40 min',
+      title: 'Flame exposure',
+      description: 'Bunched-cable flame-spread test used a 40-minute flame application under the reported test conditions.',
+    },
+    {
+      label: '1 x 20 m',
+      title: 'Roll format',
+      description: 'Stabiterm-300 is supplied in roll format for practical cable-tray and cable-line installation planning.',
+    },
   ];
 
   return (
     <div className="sevali-page">
       <PageHero
         label="Solutions"
-        title="A complete environmental and safety portfolio for modern fuel stations."
-        subtitle="Sevali brings vapor recovery, environmental balance devices, oil-water separation, fuel-economy technology, and fire-safety materials into one practical station modernization plan."
-        backgroundImageUrl="/koreastation2.webp"
+        title="Environmental, optimization, and efficiency solutions for critical operating sectors."
+        subtitle="Sevali organizes EBD, VRU, OWS, fuel economy, safety materials, and consulting into practical programs for Oil & Gas, agriculture, water, industry, remediation, and fuel-site proof verticals."
+        backgroundImageUrl="/miami-ebd-soil-placement.jpg"
       >
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="sevali-button sevali-button-amber">
-            Discuss your station
+            Discuss your site
             <FiArrowRight className="h-5 w-5" />
           </Link>
           <Link to="/roi-calculator" className="sevali-button border border-white/40 text-white hover:bg-white/10 hover:text-white">
@@ -46,54 +83,26 @@ const SolutionsPage: React.FC = () => {
       <section className="sevali-section bg-white">
         <div className="sevali-container">
           <div className="mb-10 max-w-4xl">
-            <p className="sevali-kicker">Dedicated sections</p>
-            <h2 className="sevali-heading-md mt-2">Start with the two offers buyers need to understand first.</h2>
+            <p className="sevali-kicker">Solution pillars</p>
+            <h2 className="sevali-heading-md mt-2">Start with the business outcome, then select the technology stack.</h2>
             <p className="sevali-copy mt-5">
-              For now, Sevali should sell VRU and Environmental Balance with more depth than the rest of the portfolio. The remaining products stay available as supporting categories below.
+              The portfolio is no longer framed around one type of facility. Environmental, optimization, and efficiency programs can combine EBD, recovery, separation, and consulting based on the sector and the site condition.
             </p>
           </div>
 
-          <div className="space-y-8">
-            {[solutionGroups[1], solutionGroups[0]].map((solution) => (
-              <article key={solution.slug} id={`${solution.slug}-focus`} className={`solution-accent-${solution.color} sevali-card scroll-mt-28 overflow-hidden`}>
-                <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
-                  <div className="relative min-h-[24rem] bg-gray-900">
-                    <img src={solution.image} alt={solution.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-85" />
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),transparent)]" />
-                    <div className="absolute bottom-0 left-0 max-w-xl p-8 text-white">
-                      <p className="text-sm font-extrabold text-amber-200">{solution.eyebrow}</p>
-                      <h3 className="mt-3 text-4xl font-extrabold">{solution.title}</h3>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {solutionPillars.map((pillar) => (
+              <article key={pillar.title} className="sevali-card p-7">
+                <div className="mb-6 h-1.5 w-16 rounded-full bg-amber-600" />
+                <h3 className="text-3xl font-extrabold text-gray-950">{pillar.title}</h3>
+                <p className="mt-4 leading-7 text-gray-700">{pillar.summary}</p>
+                <div className="mt-6 grid gap-3">
+                  {pillar.outcomes.map((outcome) => (
+                    <div key={outcome} className="flex gap-3 text-sm font-bold leading-6 text-gray-900">
+                      <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+                      {outcome}
                     </div>
-                  </div>
-                  <div className="p-7 md:p-10">
-                    <div className="mb-6 h-1.5 w-20 rounded-full bg-[color:var(--accent)]" />
-                    <p className="text-xl leading-8 text-gray-800">{solution.summary}</p>
-                    <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                      {solution.outcomes.map((outcome) => (
-                        <div key={outcome} className="flex items-start gap-3 text-sm font-bold text-gray-900">
-                          <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--accent)]" />
-                          {outcome}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-8 rounded-xl bg-gray-50 p-5">
-                      <p className="font-extrabold text-gray-950">What this means on site</p>
-                      <ul className="mt-4 space-y-3">
-                        {solution.details.map((detail) => (
-                          <li key={detail} className="flex gap-3 text-sm leading-6 text-gray-700">
-                            <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--accent)]" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {solution.slug === 'station-environmental-balance' && (
-                      <Link to="/environmental-balance" className="sevali-button sevali-button-primary mt-8">
-                        Learn more
-                        <FiArrowRight className="h-5 w-5" />
-                      </Link>
-                    )}
-                  </div>
+                  ))}
                 </div>
               </article>
             ))}
@@ -101,98 +110,36 @@ const SolutionsPage: React.FC = () => {
         </div>
       </section>
 
-      <section id="vru-technology" className="sevali-section">
-        <div className="sevali-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
-            <p className="sevali-kicker">VRU technology</p>
-            <h2 className="sevali-heading-md mt-2">The recovery loop buyers asked about is back.</h2>
-            <p className="sevali-copy mt-5">
-              Vapor recovery is still the clearest commercial proof point. The animated flow shows how displaced fuel vapor is captured, processed, and returned as usable product instead of being lost to emissions.
-            </p>
-            <div className="mt-8 grid gap-3">
-              {vruSteps.map((step, index) => (
-                <div key={step} className="flex gap-4 rounded-xl bg-white p-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-extrabold text-black">
-                    {index + 1}
-                  </span>
-                  <p className="font-bold leading-7 text-gray-800">{step}</p>
-                </div>
-              ))}
-            </div>
-            <Link to="/how-it-works" className="sevali-button sevali-button-primary mt-8">
-              Learn more
-              <FiArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-          <div className="sevali-card bg-white p-5 md:p-8">
-            <VruDiagram />
-          </div>
-        </div>
-      </section>
-
-      <section id="storage-facilities" className="sevali-section bg-white">
-        <div className="sevali-container">
-          <article className="sevali-card overflow-hidden">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative min-h-[26rem] bg-gray-900">
-                <img src={vruStorageFacilities.image} alt={vruStorageFacilities.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-85" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.78))]" />
-                <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <p className="text-sm font-extrabold text-amber-200">{vruStorageFacilities.eyebrow}</p>
-                  <h2 className="mt-3 text-4xl font-extrabold">{vruStorageFacilities.title}</h2>
-                </div>
-              </div>
-              <div className="p-7 md:p-10">
-                <div className="mb-6 h-1.5 w-20 rounded-full bg-amber-500" />
-                <p className="text-xl leading-8 text-gray-800">{vruStorageFacilities.summary}</p>
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {vruStorageFacilities.applications.map((application) => (
-                    <span key={application} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
-                      {application}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {vruStorageFacilities.benefits.map((benefit) => (
-                    <div key={benefit} className="flex gap-3 text-sm font-bold leading-6 text-gray-900">
-                      <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-                      {benefit}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 rounded-xl bg-amber-50 p-5">
-                  <p className="text-sm font-extrabold text-amber-800">Commercial case</p>
-                  <p className="mt-2 leading-7 text-gray-700">{vruStorageFacilities.proof}</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section className="sevali-section">
         <div className="sevali-container">
           <div className="max-w-4xl">
             <p className="sevali-kicker">Supporting portfolio</p>
-            <h2 className="sevali-heading-md mt-2">Other station products stay available without stealing the page.</h2>
+            <h2 className="sevali-heading-md mt-2">Technology modules for sector-specific programs.</h2>
             <p className="sevali-copy mt-5">
-              Oil-water separation, fuel economy, and fire safety remain part of the one-stop station story, but VRU and Environmental Balance now get the dedicated space first.
+              Each module can stand alone or combine with EBD, consulting, and partner technologies when a site needs a broader environmental or efficiency program.
             </p>
           </div>
 
           <div className="mt-12 space-y-8">
-            {solutionGroups.slice(2).map((solution, index) => {
+            {solutionGroups.map((solution, index) => {
               const isOpen = openSlug === solution.slug;
+              const articleId = solution.slug === 'fire-safety' ? 'fire-safety-module' : solution.slug;
               return (
                 <article
                   key={solution.slug}
-                  id={solution.slug}
+                  id={articleId}
                   className={`solution-accent-${solution.color} sevali-card scroll-mt-28 overflow-hidden`}
                 >
                   <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-                    <div className="relative min-h-[22rem] overflow-hidden bg-gray-900">
-                      <img src={solution.image} alt={solution.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-78" />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
+                    <div className={`relative min-h-[22rem] overflow-hidden ${solution.slug === 'oil-water-separation' ? 'bg-white' : 'bg-gray-900'}`}>
+                      <img
+                        src={solution.image}
+                        alt={solution.title}
+                        loading="lazy"
+                        decoding="async"
+                        className={`h-full w-full ${solution.slug === 'oil-water-separation' ? 'object-contain p-8' : 'object-cover opacity-78'}`}
+                      />
+                      <div className={`absolute inset-0 ${solution.slug === 'oil-water-separation' ? 'bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.42))]' : 'bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]'}`} />
                       <div className="absolute bottom-0 left-0 p-8 text-white">
                         <p className="text-sm font-extrabold text-amber-200">Solution {index + 1}</p>
                         <h3 className="mt-2 text-4xl font-extrabold">{solution.title}</h3>
@@ -230,11 +177,11 @@ const SolutionsPage: React.FC = () => {
                         </div>
                       )}
                       {solution.slug === 'oil-water-separation' && (
-                        <div className="mt-8 space-y-6">
-                          <div className="overflow-hidden rounded-xl bg-gray-950 text-white">
-                            <div className="aspect-video bg-black">
+                        <div className="mt-8 rounded-xl bg-cyan-50 p-5">
+                          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                            <div className="overflow-hidden rounded-lg bg-black">
                               <iframe
-                                className="h-full w-full"
+                                className="aspect-video w-full"
                                 src="https://www.youtube.com/embed/TpI-Rg6qAXo"
                                 title="ecoLine B Animation"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -243,86 +190,19 @@ const SolutionsPage: React.FC = () => {
                                 loading="lazy"
                               />
                             </div>
-                            <div className="p-5">
-                              <p className="text-sm font-extrabold text-cyan-200">EcoLine B animation</p>
-                              <p className="mt-2 text-sm leading-6 text-white/72">
-                                Watch how the EcoLine oil-water separator handles contaminated station runoff before the technical details below.
+                            <div>
+                              <p className="text-sm font-extrabold text-cyan-900">EcoLine B animation</p>
+                              <p className="mt-2 text-sm leading-6 text-cyan-950">
+                                Watch how the EcoLine oil-water separator handles contaminated site runoff before the technical details below.
                               </p>
-                            </div>
-                          </div>
-
-                          <div className="grid gap-4 md:grid-cols-4">
-                            {owsPerformanceSpecs.map((spec) => (
-                              <div key={spec.title} className="rounded-xl bg-white p-4 ring-1 ring-cyan-100">
-                                <p className="text-2xl font-extrabold text-cyan-800">{spec.label}</p>
-                                <h4 className="mt-2 text-sm font-extrabold text-gray-950">{spec.title}</h4>
-                                <p className="mt-2 text-xs leading-5 text-gray-700">{spec.description}</p>
-                              </div>
-                            ))}
-                          </div>
-
-                          <div className="rounded-xl bg-cyan-50 p-5">
-                            <p className="text-sm font-extrabold text-cyan-900">Why conventional plate-pack OWS units fail stations</p>
-                            <div className="mt-5 grid gap-4 md:grid-cols-2">
-                              {owsStationChallenges.map((challenge) => (
-                                <div key={challenge.title} className="rounded-lg bg-white p-4">
-                                  <h4 className="font-extrabold text-gray-950">{challenge.title}</h4>
-                                  <p className="mt-2 text-sm leading-6 text-gray-700">{challenge.description}</p>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="rounded-xl bg-gray-950 p-5 text-white">
-                            <p className="text-sm font-extrabold text-cyan-200">EcoLine B advantages</p>
-                            <div className="mt-5 grid gap-4 md:grid-cols-2">
-                              {owsSystemAdvantages.map((advantage) => (
-                                <div key={advantage.title} className="flex gap-3">
-                                  <FiCheck className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
-                                  <div>
-                                    <h4 className="font-extrabold">{advantage.title}</h4>
-                                    <p className="mt-1 text-sm leading-6 text-white/72">{advantage.description}</p>
+                              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                                {owsPerformanceSpecs.slice(0, 4).map((spec) => (
+                                  <div key={spec.title} className="rounded-lg bg-white p-4 ring-1 ring-cyan-100">
+                                    <p className="text-xl font-extrabold text-cyan-800">{spec.label}</p>
+                                    <h4 className="mt-1 text-sm font-extrabold text-gray-950">{spec.title}</h4>
                                   </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="grid gap-5 lg:grid-cols-3">
-                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
-                              <p className="font-extrabold text-gray-950">System design notes</p>
-                              <ul className="mt-4 space-y-3">
-                                {owsTechnicalNotes.map((note) => (
-                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
-                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
-                                    <span>{note}</span>
-                                  </li>
                                 ))}
-                              </ul>
-                            </div>
-
-                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
-                              <p className="font-extrabold text-gray-950">EcoSorp adsorption stage</p>
-                              <ul className="mt-4 space-y-3">
-                                {ecoSorpNotes.map((note) => (
-                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
-                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
-                                    <span>{note}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div className="rounded-xl bg-white p-5 ring-1 ring-gray-200">
-                              <p className="font-extrabold text-gray-950">ADD oil skimmer specs</p>
-                              <ul className="mt-4 space-y-3">
-                                {addDeviceSpecs.map((note) => (
-                                  <li key={note} className="flex gap-3 text-sm leading-6 text-gray-700">
-                                    <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
-                                    <span>{note}</span>
-                                  </li>
-                                ))}
-                              </ul>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -335,6 +215,71 @@ const SolutionsPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {fireSafetySolution && (
+        <section id="fire-safety" className="sevali-section scroll-mt-28 bg-[#111827] text-white">
+          <div className="sevali-container">
+            <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+              <div>
+                <p className="text-sm font-extrabold text-amber-300">Dedicated fire safety layer</p>
+                <h2 className="sevali-heading-md mt-2">Stabiterm cable protection for critical electrical routes.</h2>
+              </div>
+              <p className="max-w-3xl text-lg leading-8 text-white/74">
+                Cable-line fires can move quickly through connected infrastructure. Stabiterm materials help operators protect cable trays, cable penetrations, and electrical routes that support pumps, controls, alarms, lighting, and emergency systems.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="overflow-hidden rounded-2xl bg-white">
+                <img src={fireSafetySolution.image} alt={fireSafetySolution.title} loading="lazy" decoding="async" className="h-full min-h-[32rem] w-full object-contain p-4" />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {fireSafetyMaterials.map((material) => (
+                  <article key={material.title} className="rounded-xl border border-white/14 bg-white/7 p-5">
+                    <h3 className="text-xl font-extrabold">{material.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-white/72">{material.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-4">
+              {fireSafetyProof.map((proof) => (
+                <article key={proof.title} className="rounded-xl border border-white/14 bg-white/7 p-5">
+                  <p className="text-3xl font-extrabold text-amber-300">{proof.label}</p>
+                  <h3 className="mt-3 text-lg font-extrabold">{proof.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/72">{proof.description}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+              <div className="rounded-2xl bg-white p-7 text-gray-950 md:p-8">
+                <p className="text-sm font-extrabold text-red-700">Where it fits</p>
+                <h3 className="mt-3 text-3xl font-extrabold">Built for sites where environmental and fire risk overlap.</h3>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {fireSafetyApplications.map((application) => (
+                    <div key={application} className="flex items-start gap-3 text-sm font-bold leading-6 text-gray-900">
+                      <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-red-700" />
+                      {application}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <aside className="rounded-2xl border border-amber-300/28 bg-amber-300 p-7 text-gray-950 md:p-8">
+                <p className="text-sm font-extrabold text-red-950">Specification note</p>
+                <p className="mt-3 text-2xl font-extrabold leading-snug">
+                  Fire-protection products should be specified by cable type, fire standard, operating zone, installation access, and inspection rhythm.
+                </p>
+                <Link to="/fire-safety" className="sevali-button sevali-button-primary mt-8">
+                  Learn more
+                  <FiArrowRight className="h-5 w-5" />
+                </Link>
+              </aside>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="sevali-section bg-white">
         <div className="sevali-container grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">

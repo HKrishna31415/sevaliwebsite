@@ -5,7 +5,7 @@ const posts = [
   {
     title: 'Meeting with PSO seniors in Karachi',
     date: '2025-06-21',
-    excerpt: 'Sevali met with PSO leadership to discuss VRU deployment and broader environmental station modernization in Pakistan.',
+    excerpt: 'Sevali met with PSO leadership to discuss VRU deployment and broader environmental technology opportunities in Pakistan.',
     imageUrl: '/PSOSeniorsSevali.jpg',
     objectPosition: 'object-position-top',
     tag: 'Partnership',
@@ -13,7 +13,7 @@ const posts = [
   {
     title: 'MoU with Petroleum Institute of Pakistan',
     date: '2025-06-20',
-    excerpt: 'The partnership supports vapor recovery development in Pakistan and creates a path for expanded station environmental solutions.',
+    excerpt: 'The partnership supports vapor recovery development in Pakistan and creates a path for expanded environmental and efficiency solutions.',
     imageUrl: '/PIPSevali.jpg',
     objectPosition: 'object-position-top',
     tag: 'Market development',
@@ -53,7 +53,7 @@ const NewsPage: React.FC = () => (
     <PageHero
       label="News"
       title="Partnerships, project milestones, and climate conversations."
-      subtitle="Sevali’s updates show the company growing from VRU deployment into a wider station environmental and safety platform."
+      subtitle="Sevali’s updates show the company growing from VRU deployment into a wider environmental, optimization, and efficiency platform."
       backgroundImageUrl="/sevaliGET.jpg"
     />
     <section className="sevali-section">

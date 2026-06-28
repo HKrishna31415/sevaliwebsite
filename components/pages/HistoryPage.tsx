@@ -5,12 +5,12 @@ const timeline = [
   {
     year: 'Foundation',
     title: 'Vapor recovery as the proof point',
-    text: 'Sevali began with a focused commitment to capturing harmful vapors and converting losses into recoverable fuel value for station operators.',
+    text: 'Sevali began with a focused commitment to capturing harmful vapors and converting losses into recoverable fuel value for operating sites.',
   },
   {
     year: 'Expansion',
     title: 'Environmental balance portfolio',
-    text: 'The company expanded into soil, water, odor, emissions, oil-water separation, and station safety solutions to support cleaner operations beyond a single system.',
+    text: 'The company expanded into EBD, soil, water, odor, emissions, oil-water separation, optimization, and safety solutions to support cleaner operations beyond a single system.',
   },
   {
     year: 'Partnerships',
@@ -19,8 +19,8 @@ const timeline = [
   },
   {
     year: 'Next',
-    title: 'One-stop station modernization',
-    text: 'The new direction brings fuel retailers a single partner for environmental, emissions, water, recovery, and safety improvements.',
+    title: 'Multi-sector environmental technology platform',
+    text: 'The new direction brings Oil & Gas, agriculture, water, industrial, municipal, and fuel-site clients a single partner for environmental, optimization, and efficiency improvements.',
   },
 ];
 
@@ -28,8 +28,8 @@ const HistoryPage: React.FC = () => (
   <div className="sevali-page">
     <PageHero
       label="History"
-      title="A focused recovery story becoming a broader station modernization platform."
-      subtitle="The company’s next chapter connects practical fuel recovery with soil, water, emissions, and safety systems."
+      title="A focused recovery story becoming a broader environmental technology platform."
+      subtitle="The company’s next chapter connects practical fuel recovery with EBD, soil, water, emissions, optimization, efficiency, and safety systems."
       backgroundImageUrl="/MEpilotprojectsevali.jpg"
     />
     <section className="sevali-section">

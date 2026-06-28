@@ -130,7 +130,7 @@ const RoiCalculatorPage: React.FC = () => {
       <PageHero
         label="VRU ROI Tool"
         title="Estimate the recovered value of vapor loss."
-        subtitle="This calculator stays focused on vapor recovery because VRU has the clearest direct fuel-recovery math. It is one tool inside Sevali’s broader station environmental and safety portfolio."
+        subtitle="This calculator stays focused on vapor recovery because VRU has the clearest direct fuel-recovery math. It is one tool inside Sevali’s broader environmental, optimization, and efficiency platform."
         backgroundImageUrl="https://images.unsplash.com/photo-1640653799824-a7457551c9c0?q=80&w=1920&auto=format&fit=crop"
       />
 
@@ -140,7 +140,7 @@ const RoiCalculatorPage: React.FC = () => {
             <p className="sevali-kicker">Why VRU has its own tool</p>
             <h2 className="sevali-heading-md mt-2">Fuel vapor loss can be translated into recoverable product.</h2>
             <p className="sevali-copy mt-4">
-              The broader site covers environmental balance, oil-water separation, fuel economy, and safety. This calculator remains intentionally narrow so station operators can estimate one of the clearest commercial cases: vapor recovered back into sellable fuel.
+              The broader site covers environmental balance, oil-water separation, fuel economy, optimization, and safety. This calculator remains intentionally narrow so fuel-site operators can estimate one of the clearest commercial cases: vapor recovered back into sellable fuel.
             </p>
           </div>
           <div className="mx-auto grid max-w-6xl gap-12 rounded-xl bg-white p-8 md:p-12 lg:grid-cols-2">

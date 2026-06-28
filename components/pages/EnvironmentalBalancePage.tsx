@@ -20,8 +20,8 @@ const stationApplications = [
     title: 'Soil and groundwater',
     icon: FaSeedling,
     description:
-      'Supports bioremediation programs for hydrocarbon-impacted soil, groundwater risk, and long-term station site resilience.',
-    items: ['Fuel spill legacy areas', 'Tank-field surroundings', 'Groundwater protection', 'Hydrocarbon and pollutant stress'],
+      'Supports bioremediation programs for hydrocarbon-impacted soil, agricultural land, groundwater risk, and long-term site resilience.',
+    items: ['Legacy spill areas', 'Industrial perimeters', 'Groundwater protection', 'Hydrocarbon and pollutant stress'],
   },
   {
     title: 'Air and odor control',
@@ -35,7 +35,7 @@ const stationApplications = [
     icon: FaWater,
     description:
       'Used in water and wastewater environments where operators want to reduce odor, sludge, biofouling, scale, and corrosion burden.',
-    items: ['Wash bays and drains', 'Septic and holding tanks', 'Process-water lines', 'Sludge-prone infrastructure'],
+    items: ['Drains and runoff', 'Septic and holding tanks', 'Process-water lines', 'Sludge-prone infrastructure'],
   },
 ];
 
@@ -121,7 +121,7 @@ const differentiators = [
   {
     title: 'Low-disruption deployment',
     icon: FaShieldHalved,
-    text: 'The devices are compact and can often be added around existing station, water, or remediation infrastructure without a major construction program.',
+    text: 'The devices are compact and can often be added around existing site, water, or remediation infrastructure without a major construction program.',
   },
   {
     title: 'Site-specific validation',
@@ -144,13 +144,13 @@ const proofSignals = [
 const miamiTestPhotos = [
   {
     src: '/miami-ebd-station-overview.jpg',
-    title: 'Station context',
-    caption: 'Fuel-station forecourt and landscaped perimeter selected for field placement.',
+    title: 'Fuel-site context',
+    caption: 'Fuel-site forecourt and landscaped perimeter selected for field placement.',
   },
   {
     src: '/miami-ebd-core-drilling.jpg',
     title: 'Paved-area access',
-    caption: 'Core drilling through pavement to place the EBD sensor near impacted station infrastructure.',
+    caption: 'Core drilling through pavement to place the EBD sensor near impacted site infrastructure.',
   },
   {
     src: '/miami-ebd-paved-placement.jpg',
@@ -178,9 +178,9 @@ const miamiProofPhotos = [miamiTestPhotos[0], miamiTestPhotos[4]];
 const miamiGalleryPhotos = [miamiTestPhotos[1], miamiTestPhotos[2], miamiTestPhotos[3], miamiTestPhotos[5]];
 
 const miamiTestPoints = [
-  'Multiple sensor placements across paved and landscaped station areas.',
+  'Multiple sensor placements across paved and landscaped fuel-site areas.',
   'Core-drilled access points for paved forecourt testing.',
-  'Soil placements near grass, curb edges, and station runoff paths.',
+  'Soil placements near grass, curb edges, and runoff paths.',
   'Field photos document installation context for future monitoring and client review.',
 ];
 
@@ -188,9 +188,9 @@ const EnvironmentalBalancePage: React.FC = () => (
   <div className="sevali-page">
     <PageHero
       label="Environmental Balance Devices"
-      title="Passive remediation support for cleaner station soil, water, and air."
-      subtitle="Sevali helps fuel stations apply Environmental Balance Device technology where conventional treatment is too disruptive, too maintenance-heavy, or too narrow for the whole site problem."
-      backgroundImageUrl="/gasstationfuture.webp"
+      title="Passive environmental support for cleaner soil, water, air, and operations."
+      subtitle="Sevali applies Environmental Balance Device technology across Oil & Gas, agriculture, wastewater, industrial, municipal, and fuel-site environments where conventional treatment can be too disruptive, too maintenance-heavy, or too narrow."
+      backgroundImageUrl="/miami-ebd-ground-placement.jpg"
     >
       <div className="flex flex-wrap gap-3">
         <Link to="/contact" className="sevali-button sevali-button-amber">
@@ -206,10 +206,10 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section className="sevali-section bg-white">
       <div className="sevali-container grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <div>
-          <p className="sevali-kicker">Station use case</p>
-          <h2 className="sevali-heading-md mt-2">Environmental balance is the layer around the whole fuel site.</h2>
+          <p className="sevali-kicker">Platform technology</p>
+          <h2 className="sevali-heading-md mt-2">Environmental balance is the passive layer around the site condition.</h2>
           <p className="sevali-copy mt-5">
-            Vapor recovery handles product loss at the tank. Oil-water separation handles contaminated runoff. Environmental Balance Devices support the surrounding environment: soil, groundwater, odor, wastewater, sludge, scale, corrosion, and long-running microbial remediation conditions.
+            EBD can be evaluated where soil, water, odor, wastewater, sludge, scale, corrosion, and microbial remediation conditions affect operations. In fuel sites it can sit beside VRU and OWS; in other sectors it can support agriculture, aquaculture, process water, wastewater, and remediation programs.
           </p>
         </div>
         <div className="rounded-2xl bg-[#111827] p-6 text-white md:p-8">
@@ -217,13 +217,13 @@ const EnvironmentalBalancePage: React.FC = () => (
             {['Air', 'Water', 'Soil'].map((medium) => (
               <div key={medium} className="rounded-xl border border-white/14 bg-white/7 p-5">
                 <p className="text-4xl font-extrabold text-amber-300">{medium}</p>
-                <p className="mt-3 text-sm leading-6 text-white/72">One passive technology family, evaluated against the local station condition.</p>
+                <p className="mt-3 text-sm leading-6 text-white/72">One passive technology family, evaluated against the local site condition.</p>
               </div>
             ))}
           </div>
           <div className="mt-6 border-t border-white/14 pt-6">
             <p className="text-lg font-bold leading-8">
-              Best fit: operators who need a practical environmental upgrade before a problem becomes a shutdown, complaint, or expensive excavation project.
+              Best fit: operators who need a practical environmental upgrade before a problem becomes a shutdown, complaint, regulatory issue, or expensive excavation project.
             </p>
           </div>
         </div>
@@ -233,10 +233,10 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section id="miami-ebd-test" className="sevali-section scroll-mt-28">
       <div className="sevali-container grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
         <div>
-          <p className="sevali-kicker">Miami station field test</p>
+          <p className="sevali-kicker">Miami EBD field test</p>
           <h2 className="sevali-heading-md mt-2">Proof before the deep technical map.</h2>
           <p className="sevali-copy mt-5">
-            Sevali documented EBD sensor placement across a real Miami fuel station: paved forecourt access points, landscaped soil, curb edges, and runoff-adjacent locations. The test gives buyers a practical view of how the technology can be placed around the actual surfaces they manage every day.
+            Sevali documented EBD sensor placement across a real Miami fuel-site environment: paved access points, landscaped soil, curb edges, and runoff-adjacent locations. The test gives buyers a practical view of how the technology can be placed around real surfaces before broader sector deployment.
           </p>
           <div className="mt-6 grid gap-3">
             {miamiTestPoints.slice(0, 3).map((point) => (
@@ -271,7 +271,7 @@ const EnvironmentalBalancePage: React.FC = () => (
           <p className="sevali-kicker">EBD + OWS</p>
           <h2 className="sevali-heading-md mt-2">Environmental balance works best when runoff is controlled too.</h2>
           <p className="sevali-copy mt-5">
-            EBD supports soil, water, odor, sludge, and long-running remediation conditions around the station. Oil-water separation handles the first line of defense for contaminated runoff from drains, wash areas, spills, and stormwater. Together, they give operators a stronger station-wide environmental plan.
+            EBD supports soil, water, odor, sludge, and long-running remediation conditions around a site. Oil-water separation handles the first line of defense for contaminated runoff from drains, wash areas, spills, and stormwater. Together, they give operators a stronger environmental plan.
           </p>
           <Link to="/solutions#oil-water-separation" className="sevali-button sevali-button-primary mt-7">
             Learn about OWS
@@ -300,9 +300,9 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section className="sevali-section">
       <div className="sevali-container">
         <div className="max-w-3xl">
-          <h2 className="sevali-heading-md">Built around the three station environments that create risk.</h2>
+          <h2 className="sevali-heading-md">Built around the three environmental conditions that create risk.</h2>
           <p className="sevali-copy mt-5">
-            The page should sell the EBD offer where buyers feel pain first: contaminated ground, persistent odors, and water systems that become expensive to maintain.
+            EBD is easiest to understand through the conditions buyers already feel: contaminated ground, persistent odors, and water systems that become expensive to maintain.
           </p>
         </div>
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
@@ -349,7 +349,7 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section className="sevali-section bg-white">
       <div className="sevali-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <h2 className="sevali-heading-md">Why station owners consider it.</h2>
+          <h2 className="sevali-heading-md">Why operators consider it.</h2>
           <p className="sevali-copy mt-5">
             EBD is not a replacement for every engineered treatment system. It is a useful layer when the site needs passive, scalable environmental support with a lighter operational footprint.
           </p>
@@ -367,7 +367,7 @@ const EnvironmentalBalancePage: React.FC = () => (
           <FaLeaf className="h-10 w-10 text-emerald-700" />
           <h3 className="mt-5 text-2xl font-extrabold text-gray-950">Good-fit assessment</h3>
           <p className="mt-4 leading-7 text-gray-700">
-            Sevali should start with a site conversation, not a generic product quote. We look at the medium, the suspected pollutant load, nearby infrastructure, complaint history, and proof requirements before recommending a deployment plan.
+            Sevali should start with a site conversation, not a generic product quote. We look at the medium, the suspected pollutant load, nearby infrastructure, complaint history, operating goals, and proof requirements before recommending a deployment plan.
           </p>
           <Link to="/contact" className="sevali-button sevali-button-primary mt-7">
             Start assessment
@@ -381,12 +381,12 @@ const EnvironmentalBalancePage: React.FC = () => (
       <div className="sevali-container">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
-            <p className="sevali-kicker">Miami station field test</p>
-            <h2 className="sevali-heading-md mt-2">EBD sensor placement across paved and landscaped station zones.</h2>
+            <p className="sevali-kicker">Miami EBD field test</p>
+            <h2 className="sevali-heading-md mt-2">EBD sensor placement across paved and landscaped zones.</h2>
           </div>
           <div>
             <p className="sevali-copy">
-              This field test documents how Environmental Balance Device sensors can be embedded in different station conditions: paved forecourt areas, grass and soil zones, curb edges, and runoff-adjacent locations. The goal is to create a practical placement record before long-term monitoring begins.
+            This field test documents how Environmental Balance Device sensors can be embedded in different physical conditions: paved areas, grass and soil zones, curb edges, and runoff-adjacent locations. The goal is to create a practical placement record before long-term monitoring begins.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {['Paved forecourt', 'Landscaped soil', 'Core-drilled access', 'Monitoring reference points'].map((tag) => (
@@ -415,7 +415,7 @@ const EnvironmentalBalancePage: React.FC = () => (
             <p className="text-sm font-extrabold text-amber-300">Test record</p>
             <h3 className="mt-3 text-3xl font-extrabold">What the Miami placement shows.</h3>
             <p className="mt-4 leading-7 text-white/72">
-              The test is useful because it shows installability in real station surfaces, not only idealized diagrams. It gives operators a concrete view of how EBD sensors can be positioned around the actual problem areas they already manage.
+              The test is useful because it shows installability in real built surfaces, not only idealized diagrams. It gives operators a concrete view of how EBD sensors can be positioned around actual problem areas they already manage.
             </p>
             <div className="mt-7 space-y-4">
               {miamiTestPoints.map((point) => (
@@ -442,7 +442,7 @@ const EnvironmentalBalancePage: React.FC = () => (
             <h2 className="sevali-heading-md mt-2">One EBD platform, multiple environmental conditions.</h2>
           </div>
           <p className="sevali-copy">
-            Sevali leads with fuel stations, but the Environmental Balance Device family has documented use cases across water bodies, wastewater, agriculture, aquaculture, oil infrastructure, wells, contaminated soil, and septic systems. Each application still needs site review, baseline conditions, and success metrics before deployment.
+            The Environmental Balance Device family has documented use cases across water bodies, wastewater, agriculture, aquaculture, oil infrastructure, wells, contaminated soil, and septic systems. Fuel sites remain one proof vertical; the platform opportunity is much wider.
           </p>
         </div>
 
@@ -468,7 +468,7 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section className="sevali-section bg-white">
       <div className="sevali-container grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="overflow-hidden rounded-2xl">
-          <img src="/miami-ebd-ground-placement.jpg" alt="Environmental Balance Device soil placement at a fuel station test area" loading="lazy" decoding="async" className="h-full min-h-[28rem] w-full object-cover" />
+          <img src="/miami-ebd-ground-placement.jpg" alt="Environmental Balance Device soil placement at a fuel-site test area" loading="lazy" decoding="async" className="h-full min-h-[28rem] w-full object-cover" />
         </div>
         <div>
           <p className="sevali-kicker">Proof posture</p>

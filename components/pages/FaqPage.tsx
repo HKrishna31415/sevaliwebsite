@@ -5,15 +5,15 @@ import { solutionGroups } from '../../data/siteContent';
 
 const faqData = [
   {
-    title: 'Station Portfolio',
+    title: 'Company Positioning',
     questions: [
       {
         q: 'Is Sevali still mainly a vapor recovery company?',
-        a: 'Vapor recovery remains a proven core solution, but Sevali is expanding into a broader one-stop station portfolio covering environmental balance devices, soil and water remediation, oil-water separation, fuel-economy technology, and fire-safety products.',
+        a: 'Vapor recovery remains a proven core solution, but Sevali is now positioned as a multi-sector environmental technology provider built around EBD, remediation, water treatment, oil-water separation, optimization, efficiency, and safety solutions.',
       },
       {
-        q: 'Which problems can Sevali assess for one station?',
-        a: 'Typical station concerns include fuel vapor loss, VOC emissions, contaminated runoff, oil-water discharge, soil or groundwater risk, odor, fire readiness, fleet fuel consumption, and compliance planning.',
+        q: 'Which sectors can Sevali support?',
+        a: 'Sevali can assess opportunities across Oil & Gas, agriculture and farming, water and wastewater, industrial infrastructure, municipal remediation, and gas stations as a proven proof vertical.',
       },
     ],
   },
@@ -28,8 +28,8 @@ const faqData = [
     title: 'Installation & Operations',
     questions: [
       {
-        q: 'Can these systems be integrated into existing stations?',
-        a: 'Many solutions are selected specifically for retrofit potential. OWS kits can integrate with suitable existing tanks, VRU systems can be configured for station throughput, and selected EBD/remediation applications are designed to be non-intrusive.',
+        q: 'Can these systems be integrated into existing sites?',
+        a: 'Many solutions are selected specifically for retrofit potential. OWS kits can integrate with suitable existing tanks, VRU systems can be configured for throughput, and selected EBD/remediation applications are designed to be low-disruption.',
       },
       {
         q: 'Do all technologies require power, chemicals, or consumables?',
@@ -37,7 +37,7 @@ const faqData = [
       },
       {
         q: 'What information helps start a consultation?',
-        a: 'Useful inputs include station location, fuel volume, existing tanks and separators, site photos, discharge or odor concerns, compliance targets, and any known soil or groundwater issues.',
+        a: 'Useful inputs include site location, sector, operating process, known environmental concerns, existing tanks or water systems, photos, discharge or odor concerns, compliance targets, and any known soil or groundwater issues.',
       },
     ],
   },
@@ -93,9 +93,9 @@ const FaqPage: React.FC = () => {
     <div className="sevali-page">
       <PageHero
         label="FAQ"
-        title="Questions about the expanded station portfolio."
-        subtitle="Clear answers on Sevali’s move from VRU-only messaging to a broader environmental, water, emissions, and safety offering."
-        backgroundImageUrl="/gasstationfuture.webp"
+        title="Questions about Sevali’s environmental technology platform."
+        subtitle="Clear answers on Sevali’s move from VRU-only messaging to a broader environmental, optimization, and efficiency platform."
+        backgroundImageUrl="/miami-ebd-soil-placement.jpg"
       />
 
       <section className="sevali-section">

@@ -8,7 +8,7 @@ const AboutPage: React.FC = () => (
     <PageHero
       label="About Sevali"
       title="Integrated solutions for water, energy, environment, and industry."
-      subtitle="Sevali Energy delivers advanced environmental technologies, sustainable energy solutions, and industrial innovation with a practical focus on cleaner, safer fuel-station operations."
+      subtitle="Sevali Energy delivers environmental technologies, optimization solutions, and efficiency programs for organizations working across Oil & Gas, agriculture, water, industry, remediation, and proven fuel-site applications."
       backgroundImageUrl="/sevaliCOP29.jpeg"
     />
 
@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => (
       <div className="sevali-container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p className="sevali-kicker">Company profile</p>
-          <h2 className="sevali-heading-md mt-2">From vapor recovery specialist to environmental balance partner.</h2>
+          <h2 className="sevali-heading-md mt-2">From vapor recovery specialist to multi-sector environmental technology partner.</h2>
         </div>
         <div className="space-y-5 text-lg leading-8 text-gray-700">
           <p>
@@ -45,7 +45,7 @@ const AboutPage: React.FC = () => (
       <div className="sevali-container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="sevali-kicker">What we cover</p>
-          <h2 className="sevali-heading-md mt-2">A station-ready portfolio with broader industrial roots.</h2>
+          <h2 className="sevali-heading-md mt-2">A cross-sector portfolio with practical field proof.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {solutionGroups.map((solution) => (

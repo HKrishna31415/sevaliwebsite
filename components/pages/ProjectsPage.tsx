@@ -55,8 +55,8 @@ const ProjectsPage: React.FC = () => {
     <div className="sevali-page">
       <PageHero
         label="Projects"
-        title="Proof across stations, partnerships, testing, and climate forums."
-        subtitle="Sevali’s project story combines measurable vapor recovery, regional partnerships, certification culture, and participation in energy-transition conversations."
+        title="Proof across field deployments, partnerships, testing, and climate forums."
+        subtitle="Sevali’s project story combines measurable vapor recovery, EBD field placement, regional partnerships, certification culture, and participation in energy-transition conversations."
         backgroundImageUrl="/koreastation2.webp"
       />
 

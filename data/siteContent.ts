@@ -26,8 +26,9 @@ export const contactInfo = {
 export const primaryNav = [
   { to: '/', title: 'Home' },
   { to: '/solutions', title: 'Solutions' },
-  { to: '/environmental-balance', title: 'EBD' },
+  { to: '/environmental-balance', title: 'EBD Platform' },
   { to: '/how-it-works', title: 'VRU' },
+  { to: '/fire-safety', title: 'Fire Safety' },
   { to: '/industries', title: 'Industries' },
   { to: '/projects', title: 'Projects' },
   { to: '/resources', title: 'Resources' },
@@ -38,13 +39,13 @@ export const primaryNav = [
 export const solutionGroups = [
   {
     slug: 'station-environmental-balance',
-    title: 'Station Environmental Balance',
-    shortTitle: 'Environmental Balance',
-    eyebrow: 'Soil, water, odor, and site remediation',
+    title: 'Environmental Balance Devices',
+    shortTitle: 'EBD Platform',
+    eyebrow: 'Passive environmental support for soil, water, air, and operations',
     icon: FaLeaf,
     color: 'emerald',
     summary:
-      'Passive environmental balance devices help stations and connected facilities address soil, groundwater, odor, scaling, sludge, and emissions challenges without heavy disruption.',
+      'Passive Environmental Balance Devices help operators address soil, groundwater, odor, scaling, sludge, corrosion, wastewater, and remediation challenges without heavy disruption.',
     details: [
       'Supports soil remediation for oil, heavy metals, and pollutant contamination without excavation where conditions allow.',
       'Addresses water and wastewater issues including odor control, sludge breakdown, scaling prevention, and nutrient reduction.',
@@ -58,7 +59,7 @@ export const solutionGroups = [
     slug: 'vapor-recovery',
     title: 'Vapor Recovery Units',
     shortTitle: 'Vapor Recovery',
-    eyebrow: 'Hydrocarbon capture for fuel stations and tank farms',
+    eyebrow: 'Hydrocarbon capture for stations, terminals, and storage facilities',
     icon: FaGasPump,
     color: 'amber',
     summary:
@@ -66,21 +67,21 @@ export const solutionGroups = [
     details: [
       'Captures over 99% of fuel vapors in suitable applications and converts them back into usable gasoline.',
       'Reduces VOC emissions, flammable vapor accumulation, product loss, and regulatory exposure.',
-      'Saudi Arabia project data showed 10,248 liters recovered in June 2024 at a station with 1.3M liters monthly turnover.',
-      'Supports modern fuel retailers seeking efficiency, compliance, safety, and visible sustainability leadership.',
+      'Saudi Arabia project data showed 10,248 liters recovered in June 2024 at a fuel site with 1.3M liters monthly turnover.',
+      'Supports fuel retailers, terminals, and storage operators seeking efficiency, compliance, safety, and visible sustainability leadership.',
     ],
-    outcomes: ['Recovered fuel value', 'Lower VOC emissions', 'Improved station safety', 'Regulatory confidence'],
+    outcomes: ['Recovered fuel value', 'Lower VOC emissions', 'Improved site safety', 'Regulatory confidence'],
     image: '/koreastation2.webp',
   },
   {
     slug: 'oil-water-separation',
     title: 'Oil-Water Separation',
     shortTitle: 'OWS',
-    eyebrow: 'Retrofittable separation kits for station runoff',
+    eyebrow: 'Retrofittable separation kits for contaminated runoff',
     icon: FaDroplet,
     color: 'cyan',
     summary:
-      'Below-ground and above-ground coalescing oil-water separation systems help stations treat hydrocarbon-contaminated water while using local tank infrastructure.',
+      'Below-ground and above-ground coalescing oil-water separation systems help operators treat hydrocarbon-contaminated water while using local tank infrastructure.',
     details: [
       'Retrofittable kits integrate with new or existing steel and concrete tanks, above or below ground.',
       'Removes free non-emulsified oil, hydrocarbons, diesel, gasoline, and fuels to below 5 PPM in specified systems, supporting U.S. requirements and the stricter EN858 European standard.',
@@ -113,19 +114,43 @@ export const solutionGroups = [
     slug: 'fire-safety',
     title: 'Fire & Safety Products',
     shortTitle: 'Fire & Safety',
-    eyebrow: 'Protection materials for high-risk infrastructure',
+    eyebrow: 'Cable and infrastructure fire protection',
     icon: FaFireExtinguisher,
     color: 'red',
     summary:
-      'Fire-resistant coatings, extinguishing powders, antibacterial coatings, and fire-rated mesh help stations and industrial sites improve safety readiness.',
+      'Stabiterm fire-protection materials help fuel sites, tank farms, and industrial facilities reduce cable-fire spread and protect critical electrical routes.',
     details: [
-      'Fire-resistant liquid and paste are designed for extreme temperatures up to 3000 C for over two hours.',
-      'Suitable surfaces include wood, gypsum board, steel, iron, concrete, paper, and textiles.',
-      'Fire extinguishing powder covers Class A, B, C, and E fire applications.',
-      'Fire-rated mesh supports electrical cable protection and flame-spread prevention.',
+      'Stabiterm-300 is an intumescent mesh wrap for new and existing electrical cables, cable lines, and cable trays.',
+      'Under extreme heat, the mesh forms a porous thermal char layer that helps isolate the fire point and slow flame spread across cable surfaces.',
+      'APPLUS+ testing confirmed IEC 60331-21 circuit-integrity performance for 90 minutes plus cooling under the tested cable configuration.',
+      'EN 60332-3-22 Category A flame-spread testing showed the protected cable stayed below the 2.5 m carbonization limit under the tested conditions.',
     ],
-    outcomes: ['Higher safety readiness', 'Electrical fire prevention', 'Critical infrastructure protection', 'Hygiene and antibacterial surface options'],
-    image: '/sevaliOEMfactory.jpeg',
+    outcomes: ['90-minute circuit-integrity test', 'Bunched-cable flame-spread compliance', 'Cable tray retrofit support', 'Up to 40-year operating properties'],
+    image: '/stabiterm-300-mesh.png',
+  },
+];
+
+export const solutionPillars = [
+  {
+    title: 'Environmental',
+    summary:
+      'EBD, soil and groundwater remediation, odor reduction, sludge control, wastewater support, and oil-water separation for cleaner operating environments.',
+    solutionSlugs: ['station-environmental-balance', 'oil-water-separation'],
+    outcomes: ['Cleaner soil and water', 'Lower odor burden', 'Reduced sludge and scale', 'Practical remediation support'],
+  },
+  {
+    title: 'Optimization',
+    summary:
+      'VRU, oil and gas infrastructure support, storage and transfer improvements, and process-focused interventions that reduce avoidable loss.',
+    solutionSlugs: ['vapor-recovery', 'station-environmental-balance'],
+    outcomes: ['Recovered product value', 'Lower vapor and emissions loss', 'Better storage performance', 'Site-specific operating plans'],
+  },
+  {
+    title: 'Efficiency',
+    summary:
+      'Fuel economy, emissions reduction, maintenance reduction, carbon management, and technology partnerships that improve the business case for sustainability.',
+    solutionSlugs: ['fuel-economy-emissions', 'fire-safety'],
+    outcomes: ['Lower operating cost', 'Reduced emissions exposure', 'Improved maintenance rhythm', 'ESG and finance readiness'],
   },
 ];
 
@@ -197,7 +222,7 @@ export const owsSystemAdvantages = [
   {
     title: '100-year storm sizing',
     description:
-      'Systems can be sized around the local 100-year maximum storm event, giving stations a practical path to oversize treatment flow for flash-flood conditions.',
+      'Systems can be sized around the local 100-year maximum storm event, giving operators a practical path to oversize treatment flow for flash-flood conditions.',
   },
   {
     title: 'Catastrophic spill protection',
@@ -248,7 +273,7 @@ export const owsTechnicalNotes = [
   'An optional upstream grit chamber removes solids and helps stabilize temperature and oil-concentration fluctuations before separation.',
   'The coalescing media is a durable reticular polyurethane foam cartridge that can be rinsed and reinstalled during routine service.',
   'EcoLine B systems use stainless steel grade 304 and high-grade polyethylene components, with permanent operating temperature documented from above freezing to 158 F / 70 C.',
-  'Routine guidance calls for early visual inspection during startup, then maintenance intervals adjusted to the actual station load.',
+  'Routine guidance calls for early visual inspection during startup, then maintenance intervals adjusted to the actual site load.',
   'The outlet spill-control valve closes when maximum oil storage capacity is reached, and can be paired with an optional oil-level alarm.',
 ];
 
@@ -286,38 +311,52 @@ export const supportingServices = [
 
 export const industryGroups = [
   {
-    title: 'Fuel Stations & Tank Farms',
-    icon: FaGasPump,
+    title: 'Oil & Gas',
+    icon: FaIndustry,
     summary:
-      'The primary focus: cleaner, safer, more profitable stations through VRU, OWS, EBD, fuel economy, and fire safety systems.',
-    applications: ['Gasoline and diesel stations', 'Tank farms', 'Fuel storage terminals', 'Jet-fuel facilities', 'Vehicle wash and maintenance facilities'],
+      'EBD, VRU, OWS, and optimization technologies for pipelines, wells, tanks, terminals, refineries, and retail fuel assets.',
+    applications: ['Pipelines and wells', 'Storage tanks and tankers', 'Refineries', 'Fuel terminals', 'Gas stations as proof sites'],
   },
   {
-    title: 'Municipal Water & Waste',
+    title: 'Agriculture & Farming',
+    icon: FaEarthAmericas,
+    summary:
+      'Soil recovery, crop-health support, slurry and odor management, aquaculture water support, and low-disruption environmental improvement.',
+    applications: ['Crop farming', 'Animal farming', 'Soil restoration', 'Fish ponds', 'Aquaculture raceways'],
+  },
+  {
+    title: 'Water & Wastewater',
     icon: MdWaterDrop,
     summary:
       'Wastewater, drinking water, septic, oxidation pond, sewage, solid waste, odor, corrosion, and carbon-credit opportunities.',
     applications: ['WWTP', 'Drinking-water plants', 'Septic tanks', 'Municipal solid waste', 'River and coastal discharge'],
   },
   {
-    title: 'Industrial & Energy Sites',
+    title: 'Industrial & Infrastructure',
     icon: FaIndustry,
     summary:
-      'Oil and gas facilities, refineries, pipelines, cement, steel, chemical storage, transformer sites, and process-water treatment.',
-    applications: ['Refineries', 'Pipelines', 'Steel plants', 'Cement plants', 'Power generation sites'],
+      'Environmental and efficiency programs for cement, steel, chemical storage, transformer sites, power generation, and process-water systems.',
+    applications: ['Steel plants', 'Cement plants', 'Chemical storage', 'Transformer sites', 'Power generation sites'],
   },
   {
-    title: 'Agriculture & Aquaculture',
-    icon: FaEarthAmericas,
+    title: 'Municipal Remediation',
+    icon: FaRecycle,
     summary:
-      'Air, wastewater, slurry, soil, crop, reforestation, fish-farming, and water bioremediation solutions for cleaner production.',
-    applications: ['Animal farming', 'Crop farming', 'Reforestation', 'Fish ponds', 'Aquaculture raceways'],
+      'Long-term environmental support for water bodies, odor complaints, contaminated soil, public infrastructure, and green-finance pathways.',
+    applications: ['Lakes and rivers', 'Public land remediation', 'Odor control', 'Solid waste sites', 'Green finance programs'],
+  },
+  {
+    title: 'Gas Stations',
+    icon: FaGasPump,
+    summary:
+      'A proven vertical where Sevali combines VRU, OWS, EBD, fuel economy, and safety systems into measurable site upgrades.',
+    applications: ['Retail fuel sites', 'Car wash runoff', 'Forecourt soil', 'Tank areas', 'Station safety'],
   },
 ];
 
 export const proofPoints = [
-  { value: '99%+', label: 'Potential vapor recovery efficiency', note: 'For suitable VRU applications' },
-  { value: '10,248 L', label: 'Recovered in one month', note: 'June 2024 Saudi station example' },
+  { value: '9+', label: 'EBD application families', note: 'Across soil, water, agriculture, aquaculture, oil infrastructure, and wastewater' },
+  { value: '99%+', label: 'Potential vapor recovery efficiency', note: 'For suitable VRU and storage applications' },
   { value: '<5 PPM', label: 'Oil-water separation target', note: 'For free non-emulsified oil in specified OWS systems' },
   { value: '15+ yrs', label: 'Long-term EBD action', note: 'For selected remediation use cases' },
 ];
@@ -328,9 +367,9 @@ export const projects = [
     location: 'Saudi Arabia',
     imageUrl: '/proj_1.webp',
     type: 'Vapor Recovery',
-    challenge: 'A high-throughput fuel station needed to reduce vapor losses while improving environmental performance and profitability.',
-    solution: 'SEVALI deployed vapor recovery technology configured for station fuel turnover and local operating conditions.',
-    results: 'In June 2024, a station with 1.3 million liters monthly turnover recovered 10,248 liters of gasoline vapor, averaging more than 340 liters per day.',
+    challenge: 'A high-throughput fuel site needed to reduce vapor losses while improving environmental performance and profitability.',
+    solution: 'SEVALI deployed vapor recovery technology configured for fuel turnover and local operating conditions.',
+    results: 'In June 2024, a fuel site with 1.3 million liters monthly turnover recovered 10,248 liters of gasoline vapor, averaging more than 340 liters per day.',
   },
   {
     title: 'Jordan SGS Validation',
@@ -348,7 +387,7 @@ export const projects = [
     type: 'Partnership',
     challenge: 'A new market needed institutional support for vapor recovery development and environmental modernization.',
     solution: 'SEVALI signed an MoU with the Petroleum Institute of Pakistan and met with PSO leadership to advance market deployment.',
-    results: 'The partnership created a channel for future VRU projects and broader station environmental solutions.',
+    results: 'The partnership created a channel for future VRU projects and broader environmental technology solutions.',
   },
   {
     title: 'Global Energy Transition Congress',
@@ -366,7 +405,7 @@ export const projects = [
     type: 'Climate Forum',
     challenge: 'Climate-focused stakeholders need credible technologies that connect emissions reduction with operational value.',
     solution: 'SEVALI participated in COP29 conversations around cleaner operations and sustainability implementation.',
-    results: 'The presence connected the company’s practical station solutions with wider decarbonization and climate-finance conversations.',
+    results: 'The presence connected the company’s practical environmental solutions with wider decarbonization and climate-finance conversations.',
   },
   {
     title: 'OEM & Technology Network',
@@ -382,13 +421,13 @@ export const projects = [
 export const resources = [
   {
     title: 'VRU ROI Calculator',
-    description: 'Estimate the value of recovered vapor for a station based on volume, fuel price, and unit investment.',
+    description: 'Estimate the value of recovered vapor for a fuel site based on volume, fuel price, and unit investment.',
     to: '/roi-calculator',
     icon: FaChartLine,
   },
   {
-    title: 'Station Care & Maintenance',
-    description: 'Operational guidance for keeping recovery, separation, and safety systems reliable after installation.',
+    title: 'System Care & Maintenance',
+    description: 'Operational guidance for keeping recovery, separation, remediation, and safety systems reliable after installation.',
     to: '/maintenance',
     icon: FaWrench,
   },

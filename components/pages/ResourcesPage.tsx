@@ -8,8 +8,8 @@ const ResourcesPage: React.FC = () => (
   <div className="sevali-page">
     <PageHero
       label="Resources"
-      title="Tools and guidance for station modernization decisions."
-      subtitle="Use the calculator, FAQ, station-care guidance, and project updates to move from interest to a practical consultation."
+      title="Tools and guidance for environmental technology decisions."
+      subtitle="Use the calculator, FAQ, system-care guidance, and project updates to move from interest to a practical site consultation."
       backgroundImageUrl="/sevalibooth.webp"
     />
 

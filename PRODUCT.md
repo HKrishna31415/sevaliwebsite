@@ -6,17 +6,17 @@ brand
 
 ## Users
 
-Sevali Energy serves fuel station owners, operators, procurement teams, project partners, and environmental or safety stakeholders who need practical systems for cleaner, safer station operations. Visitors may arrive with one specific problem, such as vapor recovery, soil contamination, oil-water separation, emissions reduction, or fire safety compliance, but the broader job is to find a credible partner who can help a station improve its environmental balance and operational resilience.
+Sevali Energy serves Oil & Gas operators, agriculture and farming groups, water and wastewater teams, industrial sites, municipal remediation stakeholders, fuel-site owners, procurement teams, and project partners who need practical systems for cleaner, safer, more efficient operations. Visitors may arrive with one specific problem, such as soil contamination, water stress, odor, sludge, corrosion, vapor loss, emissions reduction, or safety compliance, but the broader job is to find a credible partner who can improve environmental balance, optimization, and efficiency.
 
 ## Product Purpose
 
-Sevali Energy exists to help gas stations and fuel-related facilities reduce environmental harm, recover wasted value, and improve safety through a growing portfolio of applied environmental and safety systems. Vapor recovery remains a strong proof point, but the brand is expanding into a one-stop shop for gas station environmental balance devices and services, including soil cleaning solutions, vapor recovery units, oil-water separators, fire-extinguisher related products, and adjacent station safety or compliance products.
+Sevali Energy exists to help organizations reduce environmental harm, recover wasted value, improve efficiency, and strengthen safety through a growing portfolio of applied environmental technologies. Vapor recovery remains a strong proof point, but EBD is the major growth platform, opening broader markets across soil, water, agriculture, wastewater, Oil & Gas infrastructure, industrial operations, municipal remediation, and fuel-site applications.
 
-Success means the site quickly communicates that Sevali is not only a VRU vendor: it is a practical partner for station-wide environmental, emissions, and safety upgrades. The experience should make buyers trust the company, understand the portfolio, see proof through projects and certifications, and know how to start a conversation.
+Success means the site quickly communicates that Sevali is not only a VRU vendor or gas-station supplier: it is a multi-sector environmental technology provider organized around Environmental, Optimization, and Efficiency solutions. The experience should make buyers trust the company, understand the portfolio, see proof through projects and certifications, and know how to start a site conversation.
 
 ## Brand Personality
 
-Technical, certified, practical, and sustainability-minded. The brand should feel industrially credible rather than decorative, optimistic without sounding naive, and commercially useful rather than purely educational. It should balance environmental responsibility with the business case: cleaner stations, safer operations, lower losses, recoverable value, and easier compliance.
+Technical, certified, practical, and sustainability-minded. The brand should feel industrially credible rather than decorative, optimistic without sounding naive, and commercially useful rather than purely educational. It should balance environmental responsibility with the business case: cleaner sites, safer operations, lower losses, recoverable value, efficiency gains, and easier compliance.
 
 ## Anti-references
 
@@ -24,11 +24,11 @@ This should not look like a generic clean-tech startup with abstract green promi
 
 ## Design Principles
 
-1. Lead with the broader station ecosystem, not only vapor recovery.
+1. Lead with the broader environmental technology platform, not only vapor recovery or gas stations.
 2. Make environmental impact and business value reinforce each other.
 3. Use certifications, project history, and real imagery as proof, not decoration.
 4. Keep technical explanations clear enough for buyers and grounded enough for operators.
-5. Treat safety, emissions, soil, water, and recovery products as one connected station-modernization story.
+5. Treat safety, emissions, soil, water, recovery, optimization, and efficiency products as one connected site-improvement story.
 
 ## Accessibility & Inclusion
 

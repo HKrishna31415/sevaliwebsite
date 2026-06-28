@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
         <div className="border-b border-white/10 bg-[#1c222b]">
           <div className="sevali-container flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-extrabold text-amber-300">Station environmental balance starts with one conversation.</p>
+              <p className="text-sm font-extrabold text-amber-300">Environmental performance starts with one site conversation.</p>
               <h2 className="mt-2 max-w-3xl text-3xl font-bold text-white md:text-4xl">
-                Bring vapor recovery, water separation, remediation, and safety products into one station plan.
+                Bring EBD, recovery, separation, optimization, and efficiency technologies into one practical program.
               </h2>
             </div>
             <Link to="/contact" className="sevali-button sevali-button-amber shrink-0">
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-4">
               <img src="/sevaliyellow.png" alt="Sevali Energy" className="h-20 w-auto" />
               <p className="mt-6 max-w-sm text-sm leading-7 text-gray-400">
-                Integrated solutions for water, energy, environment, and industry, focused on cleaner and safer fuel-station operations.
+                Integrated environmental, optimization, and efficiency solutions for Oil & Gas, agriculture, water, industry, remediation, and fuel-site proof programs.
               </p>
               <div className="mt-7 flex items-center gap-7 text-gray-400">
                 {[
@@ -81,7 +81,9 @@ const Footer: React.FC = () => {
                         ? '/environmental-balance'
                         : solution.slug === 'vapor-recovery'
                           ? '/how-it-works'
-                          : `/solutions#${solution.slug}`
+                          : solution.slug === 'fire-safety'
+                            ? '/fire-safety'
+                            : `/solutions#${solution.slug}`
                     }
                   >
                     {solution.shortTitle}
