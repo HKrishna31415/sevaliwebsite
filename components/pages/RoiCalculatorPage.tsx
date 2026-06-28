@@ -8,10 +8,19 @@ const AnimatedNumber: React.FC<{ value: number; formatter: (val: number) => stri
   const prevValueRef = useRef(0);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setDisplayValue(value);
+      prevValueRef.current = value;
+      return;
+    }
+
     const startValue = prevValueRef.current;
     const endValue = value;
     const duration = 1500; // ms
     let startTime: number | null = null;
+    let frameId = 0;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -19,17 +28,20 @@ const AnimatedNumber: React.FC<{ value: number; formatter: (val: number) => stri
       const current = startValue + progress * (endValue - startValue);
       setDisplayValue(current);
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        frameId = requestAnimationFrame(animate);
       } else {
         setDisplayValue(endValue);
         prevValueRef.current = endValue;
       }
     };
 
-    requestAnimationFrame(animate);
+    frameId = requestAnimationFrame(animate);
 
     // Store the final value for the next animation's start
-    return () => { prevValueRef.current = value };
+    return () => {
+      cancelAnimationFrame(frameId);
+      prevValueRef.current = value;
+    };
   }, [value]);
 
   return <span>{formatter(displayValue)}</span>;
@@ -48,6 +60,7 @@ const RoiCalculatorPage: React.FC = () => {
     roiMonths: 0,
   });
   const [isCalculated, setIsCalculated] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -62,7 +75,7 @@ const RoiCalculatorPage: React.FC = () => {
     const cost = parseFloat(unitCost);
 
     if (isNaN(volume) || isNaN(price) || isNaN(cost) || volume <= 0 || price <= 0 || cost <= 0) {
-      alert("Please enter valid positive numbers for all fields.");
+      setError('Enter positive numbers for volume, fuel price, and investment.');
       return;
     }
     
@@ -83,6 +96,7 @@ const RoiCalculatorPage: React.FC = () => {
       roiMonths,
     });
     setIsCalculated(true);
+    setError('');
   };
   
   const formatCurrency = (value: number) => {
@@ -100,6 +114,16 @@ const RoiCalculatorPage: React.FC = () => {
 
   const volumeUnitLabel = unitSystem === 'gallons' ? 'Gallons' : 'Liters';
   const priceUnitLabel = unitSystem === 'gallons' ? 'Gallon' : 'Liter';
+  let gallonsToggleClass = 'text-gray-600';
+  let litersToggleClass = 'text-gray-600';
+
+  if (unitSystem === 'gallons') {
+    gallonsToggleClass = 'bg-amber-500 text-black shadow';
+  }
+
+  if (unitSystem === 'liters') {
+    litersToggleClass = 'bg-amber-500 text-black shadow';
+  }
 
   return (
     <>
@@ -127,16 +151,21 @@ const RoiCalculatorPage: React.FC = () => {
               
               <div className="flex justify-center mb-6">
                 <div className="bg-gray-200 rounded-full p-1 flex">
-                    <button onClick={() => setUnitSystem('gallons')} className={`px-4 py-1 text-sm font-semibold rounded-full transition-colors ${unitSystem === 'gallons' ? 'bg-amber-500 text-white shadow' : 'text-gray-600'}`}>
+                    <button type="button" onClick={() => setUnitSystem('gallons')} className={`px-4 py-1 text-sm font-semibold rounded-full transition-colors ${gallonsToggleClass}`}>
                         Gallons
                     </button>
-                    <button onClick={() => setUnitSystem('liters')} className={`px-4 py-1 text-sm font-semibold rounded-full transition-colors ${unitSystem === 'liters' ? 'bg-amber-500 text-white shadow' : 'text-gray-600'}`}>
+                    <button type="button" onClick={() => setUnitSystem('liters')} className={`px-4 py-1 text-sm font-semibold rounded-full transition-colors ${litersToggleClass}`}>
                         Liters
                     </button>
                 </div>
               </div>
 
               <form onSubmit={handleCalculate} className="space-y-6">
+                {error && (
+                  <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-900" role="alert">
+                    {error}
+                  </div>
+                )}
                 <div>
                   <label htmlFor="dailyVolume" className="block text-sm font-medium text-gray-700 mb-1">Average Daily Fuel Volume ({volumeUnitLabel})</label>
                   <div className="flex items-center space-x-4">

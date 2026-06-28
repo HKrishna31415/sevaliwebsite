@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <section
       className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-cover bg-center text-white"
-      style={{ backgroundImage: "url('/gasstationfuture.png')" }}
+      style={{ backgroundImage: "url('/gasstationfuture.webp')" }}
     >
       <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(9,16,24,0.78),rgba(9,16,24,0.28)_55%,rgba(9,16,24,0.68))]" />
 

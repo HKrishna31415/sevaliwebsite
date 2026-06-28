@@ -14,6 +14,8 @@ const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImageUrl
       <img
         src={backgroundImageUrl}
         alt=""
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
       />
     )}

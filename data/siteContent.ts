@@ -52,7 +52,7 @@ export const solutionGroups = [
       'Can support carbon-credit and green-finance pathways where projects qualify.',
     ],
     outcomes: ['Cleaner soil and groundwater', 'Lower odor and emissions exposure', 'Reduced maintenance burden', 'Long-term site resilience'],
-    image: '/gasstationfuture.png',
+    image: '/miami-ebd-soil-placement.jpg',
   },
   {
     slug: 'vapor-recovery',
@@ -70,7 +70,7 @@ export const solutionGroups = [
       'Supports modern fuel retailers seeking efficiency, compliance, safety, and visible sustainability leadership.',
     ],
     outcomes: ['Recovered fuel value', 'Lower VOC emissions', 'Improved station safety', 'Regulatory confidence'],
-    image: '/koreastation2.png',
+    image: '/koreastation2.webp',
   },
   {
     slug: 'oil-water-separation',
@@ -89,7 +89,7 @@ export const solutionGroups = [
       'Maintenance can be conducted above ground, avoiding confined-space entry and reducing the need to empty oil and water from the tank before service.',
     ],
     outcomes: ['Cleaner discharge', 'Lower VAC-truck cost', 'Safer above-ground maintenance', 'Fail-safe discharge protection'],
-    image: '/proj_6.png',
+    image: '/ows-ecoline-system.webp',
   },
   {
     slug: 'fuel-economy-emissions',
@@ -326,7 +326,7 @@ export const projects = [
   {
     title: 'Saudi Arabia VRU Recovery',
     location: 'Saudi Arabia',
-    imageUrl: '/proj_1.png',
+    imageUrl: '/proj_1.webp',
     type: 'Vapor Recovery',
     challenge: 'A high-throughput fuel station needed to reduce vapor losses while improving environmental performance and profitability.',
     solution: 'SEVALI deployed vapor recovery technology configured for station fuel turnover and local operating conditions.',

@@ -60,7 +60,7 @@ const NewsPage: React.FC = () => (
       <div className="sevali-container grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <article key={post.title} className="sevali-card overflow-hidden">
-            <img src={post.imageUrl} alt={post.title} className={`h-56 w-full object-cover ${post.objectPosition || ''}`} />
+            <img src={post.imageUrl} alt={post.title} loading="lazy" decoding="async" className={`h-56 w-full object-cover ${post.objectPosition || ''}`} />
             <div className="p-6">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-extrabold text-amber-800">{post.tag}</span>

@@ -10,7 +10,7 @@ const ResourcesPage: React.FC = () => (
       label="Resources"
       title="Tools and guidance for station modernization decisions."
       subtitle="Use the calculator, FAQ, station-care guidance, and project updates to move from interest to a practical consultation."
-      backgroundImageUrl="/sevalibooth.png"
+      backgroundImageUrl="/sevalibooth.webp"
     />
 
     <section className="sevali-section">

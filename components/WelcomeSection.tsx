@@ -4,7 +4,7 @@ const WelcomeSection: React.FC = () => {
     return (
         <section className="relative bg-white py-24 overflow-hidden">
             <div className="absolute inset-0 z-0">
-                <img src="/gasstationfuture.png" alt="" className="h-full w-full object-cover opacity-[0.06]" />
+                <img src="/gasstationfuture.webp" alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-[0.06]" />
             </div>
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -13,7 +13,7 @@ const WelcomeSection: React.FC = () => {
                         <h2 className="text-5xl lg:text-6xl font-bold font-display text-gray-900 mb-6">
                             Welcome!
                         </h2>
-                        <blockquote className="mt-6 text-xl text-gray-800 italic border-l-4 border-[#F2B65D] pl-6">
+                        <blockquote className="mt-6 rounded-xl bg-amber-50 px-6 py-5 text-xl italic text-amber-950">
                             "Harnessing innovation to turn vapor into value, safeguarding our planet one molecule at a time."
                         </blockquote>
                     </div>
@@ -30,6 +30,8 @@ const WelcomeSection: React.FC = () => {
                             <img 
                                 src="/yalchin_image.jpg" 
                                 alt="Yalchin Aliyev"
+                                loading="lazy"
+                                decoding="async"
                                 className="w-16 h-16 rounded-full object-cover"
                             />
                             <div>

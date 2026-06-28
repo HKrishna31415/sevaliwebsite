@@ -60,21 +60,29 @@ const faqData = [
   },
 ];
 
-const FaqItem: React.FC<{ question: string; answer: string; isOpen: boolean; onToggle: () => void }> = ({ question, answer, isOpen, onToggle }) => (
-  <div className="border-b border-gray-200">
-    <button type="button" onClick={onToggle} className="flex w-full items-center justify-between gap-4 py-5 text-left font-extrabold text-gray-900">
-      <span>{question}</span>
-      <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${isOpen ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-700'}`}>
-        <FiChevronRight className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
-      </span>
-    </button>
-    <div className={`grid transition-all duration-200 ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
-      <div className="overflow-hidden">
-        <p className="pb-5 pr-10 leading-7 text-gray-600">{answer}</p>
+const FaqItem: React.FC<{ question: string; answer: string; isOpen: boolean; onToggle: () => void }> = ({ question, answer, isOpen, onToggle }) => {
+  let iconStateClass = 'bg-gray-100 text-gray-700';
+
+  if (isOpen) {
+    iconStateClass = 'bg-amber-500 text-black';
+  }
+
+  return (
+    <div className="border-b border-gray-200">
+      <button type="button" onClick={onToggle} aria-expanded={isOpen} className="flex w-full items-center justify-between gap-4 py-5 text-left font-extrabold text-gray-900">
+        <span>{question}</span>
+        <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${iconStateClass}`}>
+          <FiChevronRight className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
+        </span>
+      </button>
+      <div className={`grid transition-all duration-200 ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+        <div className="overflow-hidden">
+          <p className="pb-5 pr-10 leading-7 text-gray-600">{answer}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const FaqPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -87,7 +95,7 @@ const FaqPage: React.FC = () => {
         label="FAQ"
         title="Questions about the expanded station portfolio."
         subtitle="Clear answers on Sevali’s move from VRU-only messaging to a broader environmental, water, emissions, and safety offering."
-        backgroundImageUrl="/gasstationfuture.png"
+        backgroundImageUrl="/gasstationfuture.webp"
       />
 
       <section className="sevali-section">

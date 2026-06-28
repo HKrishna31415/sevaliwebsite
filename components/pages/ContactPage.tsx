@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHero from '../PageHero';
 import { contactInfo, solutionGroups } from '../../data/siteContent';
 
-const ContactPage: React.FC = () => (
+const ContactPage: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
   <div className="sevali-page">
     <PageHero
       label="Contact"
@@ -55,31 +63,43 @@ const ContactPage: React.FC = () => (
           </div>
         </aside>
 
-        <form className="sevali-card p-6 md:p-8">
+        <form className="sevali-card p-6 md:p-8" onSubmit={handleSubmit}>
+          {submitted && (
+            <div className="mb-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4" role="status" aria-live="polite">
+              <p className="font-extrabold text-emerald-950">Request noted.</p>
+              <p className="mt-1 text-sm leading-6 text-emerald-900">
+                This frontend form is ready for a backend connection. For now, please send the same details to{' '}
+                <a href={`mailto:${contactInfo.email}`} className="font-extrabold underline underline-offset-4">
+                  {contactInfo.email}
+                </a>{' '}
+                or call {contactInfo.mobile}.
+              </p>
+            </div>
+          )}
           <div className="grid gap-5 md:grid-cols-2">
             <div>
               <label htmlFor="name" className="block text-sm font-extrabold text-gray-900">
                 Name
               </label>
-              <input id="name" type="text" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+              <input id="name" name="name" type="text" required className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
             </div>
             <div>
               <label htmlFor="company" className="block text-sm font-extrabold text-gray-900">
                 Company
               </label>
-              <input id="company" type="text" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+              <input id="company" name="company" type="text" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-extrabold text-gray-900">
                 Email
               </label>
-              <input id="email" type="email" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+              <input id="email" name="email" type="email" required className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
             </div>
             <div>
               <label htmlFor="phone" className="block text-sm font-extrabold text-gray-900">
                 Phone
               </label>
-              <input id="phone" type="tel" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
+              <input id="phone" name="phone" type="tel" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500" />
             </div>
           </div>
 
@@ -87,7 +107,7 @@ const ContactPage: React.FC = () => (
             <label htmlFor="interest" className="block text-sm font-extrabold text-gray-900">
               Solution interest
             </label>
-            <select id="interest" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500">
+            <select id="interest" name="interest" className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500">
               <option>Not sure yet - assess my station</option>
               {solutionGroups.map((solution) => (
                 <option key={solution.slug}>{solution.title}</option>
@@ -102,7 +122,9 @@ const ContactPage: React.FC = () => (
             </label>
             <textarea
               id="message"
+              name="message"
               rows={6}
+              required
               className="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none focus:border-amber-500"
               placeholder="Tell us about vapor loss, runoff, contaminated soil, fuel use, fire-safety needs, or compliance goals."
             />
@@ -118,6 +140,7 @@ const ContactPage: React.FC = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 
 export default ContactPage;

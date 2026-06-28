@@ -40,6 +40,8 @@ const HomePage: React.FC = () => {
               <img
                 src="/yalchin_image.jpg"
                 alt="Yalçin Aliyev"
+                loading="lazy"
+                decoding="async"
                 className="h-20 w-20 shrink-0 rounded-full border-2 border-amber-300 object-cover"
               />
               <div>
@@ -109,7 +111,7 @@ const HomePage: React.FC = () => {
                 to={solution.slug === 'station-environmental-balance' ? '/environmental-balance' : `/solutions#${solution.slug}`}
                 className={`solution-accent-${solution.color} sevali-card group flex min-h-[18rem] flex-col overflow-hidden hover:-translate-y-1 hover:border-[color:var(--accent)] hover:text-inherit transition`}
               >
-                <img src={solution.image} alt="" className="h-28 w-full object-cover" />
+                <img src={solution.image} alt="" loading="lazy" decoding="async" className="h-28 w-full object-cover" />
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-5 h-1.5 w-12 rounded-full bg-[color:var(--accent)]" />
                   <h3 className="text-xl font-extrabold text-gray-950">{solution.shortTitle}</h3>
@@ -134,7 +136,7 @@ const HomePage: React.FC = () => {
           <div className="grid gap-6 lg:grid-cols-2">
             {solutionGroups.slice(0, 2).reverse().map((solution) => (
               <article key={solution.slug} className={`solution-accent-${solution.color} sevali-card overflow-hidden`}>
-                <img src={solution.image} alt={solution.title} className="h-72 w-full object-cover" />
+                <img src={solution.image} alt={solution.title} loading="lazy" decoding="async" className="h-72 w-full object-cover" />
                 <div className="p-7 md:p-9">
                   <p className="text-sm font-extrabold text-[color:var(--accent)]">{solution.eyebrow}</p>
                   <h3 className="mt-3 text-3xl font-extrabold text-gray-950">{solution.title}</h3>
@@ -180,7 +182,7 @@ const HomePage: React.FC = () => {
             </Link>
           </div>
           <div className="sevali-card overflow-hidden">
-            <img src={vruStorageFacilities.image} alt={vruStorageFacilities.title} className="h-[28rem] w-full object-cover" />
+            <img src={vruStorageFacilities.image} alt={vruStorageFacilities.title} loading="lazy" decoding="async" className="h-[28rem] w-full object-cover" />
           </div>
         </div>
       </section>
@@ -218,7 +220,7 @@ const HomePage: React.FC = () => {
           <div className="grid gap-5 md:grid-cols-3">
             {featuredProjects.map((project) => (
               <article key={project.title} className="sevali-card overflow-hidden">
-                <img src={project.imageUrl} alt={project.title} className="h-44 w-full object-cover" />
+                <img src={project.imageUrl} alt={project.title} loading="lazy" decoding="async" className="h-44 w-full object-cover" />
                 <div className="p-5">
                   <p className="text-sm font-extrabold text-amber-700">{project.type}</p>
                   <h3 className="mt-2 text-lg font-extrabold text-gray-950">{project.title}</h3>

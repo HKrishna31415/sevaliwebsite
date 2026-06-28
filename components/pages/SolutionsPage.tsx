@@ -30,7 +30,7 @@ const SolutionsPage: React.FC = () => {
         label="Solutions"
         title="A complete environmental and safety portfolio for modern fuel stations."
         subtitle="Sevali brings vapor recovery, environmental balance devices, oil-water separation, fuel-economy technology, and fire-safety materials into one practical station modernization plan."
-        backgroundImageUrl="/koreastation2.png"
+        backgroundImageUrl="/koreastation2.webp"
       >
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="sevali-button sevali-button-amber">
@@ -58,7 +58,7 @@ const SolutionsPage: React.FC = () => {
               <article key={solution.slug} id={`${solution.slug}-focus`} className={`solution-accent-${solution.color} sevali-card scroll-mt-28 overflow-hidden`}>
                 <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
                   <div className="relative min-h-[24rem] bg-gray-900">
-                    <img src={solution.image} alt={solution.title} className="h-full w-full object-cover opacity-85" />
+                    <img src={solution.image} alt={solution.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-85" />
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),transparent)]" />
                     <div className="absolute bottom-0 left-0 max-w-xl p-8 text-white">
                       <p className="text-sm font-extrabold text-amber-200">{solution.eyebrow}</p>
@@ -112,7 +112,7 @@ const SolutionsPage: React.FC = () => {
             <div className="mt-8 grid gap-3">
               {vruSteps.map((step, index) => (
                 <div key={step} className="flex gap-4 rounded-xl bg-white p-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-extrabold text-gray-950">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-extrabold text-black">
                     {index + 1}
                   </span>
                   <p className="font-bold leading-7 text-gray-800">{step}</p>
@@ -135,7 +135,7 @@ const SolutionsPage: React.FC = () => {
           <article className="sevali-card overflow-hidden">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               <div className="relative min-h-[26rem] bg-gray-900">
-                <img src={vruStorageFacilities.image} alt={vruStorageFacilities.title} className="h-full w-full object-cover opacity-85" />
+                <img src={vruStorageFacilities.image} alt={vruStorageFacilities.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-85" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.78))]" />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
                   <p className="text-sm font-extrabold text-amber-200">{vruStorageFacilities.eyebrow}</p>
@@ -191,7 +191,7 @@ const SolutionsPage: React.FC = () => {
                 >
                   <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
                     <div className="relative min-h-[22rem] overflow-hidden bg-gray-900">
-                      <img src={solution.image} alt={solution.title} className="h-full w-full object-cover opacity-78" />
+                      <img src={solution.image} alt={solution.title} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-78" />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
                       <div className="absolute bottom-0 left-0 p-8 text-white">
                         <p className="text-sm font-extrabold text-amber-200">Solution {index + 1}</p>
@@ -231,6 +231,26 @@ const SolutionsPage: React.FC = () => {
                       )}
                       {solution.slug === 'oil-water-separation' && (
                         <div className="mt-8 space-y-6">
+                          <div className="overflow-hidden rounded-xl bg-gray-950 text-white">
+                            <div className="aspect-video bg-black">
+                              <iframe
+                                className="h-full w-full"
+                                src="https://www.youtube.com/embed/TpI-Rg6qAXo"
+                                title="ecoLine B Animation"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen
+                                loading="lazy"
+                              />
+                            </div>
+                            <div className="p-5">
+                              <p className="text-sm font-extrabold text-cyan-200">EcoLine B animation</p>
+                              <p className="mt-2 text-sm leading-6 text-white/72">
+                                Watch how the EcoLine oil-water separator handles contaminated station runoff before the technical details below.
+                              </p>
+                            </div>
+                          </div>
+
                           <div className="grid gap-4 md:grid-cols-4">
                             {owsPerformanceSpecs.map((spec) => (
                               <div key={spec.title} className="rounded-xl bg-white p-4 ring-1 ring-cyan-100">

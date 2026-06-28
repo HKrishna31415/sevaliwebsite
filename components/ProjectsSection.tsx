@@ -7,7 +7,7 @@ const projects = [
   {
     title: 'Dammam Station',
     location: 'Dammam, Saudi Arabia',
-    imageUrl: '/proj_1.png',
+    imageUrl: '/proj_1.webp',
     challenge: 'Significant product loss due to fugitive VOC emissions during storage and transfer, leading to economic losses and risks of non-compliance with state environmental regulations.',
     solution: 'Engineered and installed a state-of-the-art Sevali Energy VRU system, custom-configured for the refinery\'s specific hydrocarbon blend and operational throughput.',
     results: 'Achieved a 95% reduction in VOC emissions, recovering over 70,000 gallons of product annually. The client realized a full return on investment in just 22 months.'
@@ -31,7 +31,7 @@ const projects = [
   {
     title: 'Riyadh Station',
     location: 'Riyadh, Saudi Arabia',
-    imageUrl: '/proj_4.png',
+    imageUrl: '/proj_4.webp',
     challenge: 'Severe product evaporation from storage tanks at a critical pipeline pumping station due to extreme ambient temperatures.',
     solution: 'Provided a high-capacity VRU equipped with an advanced cooling system tailored for high-temperature desert operation, ensuring consistent performance.',
     results: 'Drastically reduced evaporation losses by over 90%, saving the client millions in product value annually and improving air quality in the region.'
@@ -39,7 +39,7 @@ const projects = [
   {
     title: 'Amman Station',
     location: 'Amman, Jordan',
-    imageUrl: '/proj_5.png',
+    imageUrl: '/proj_5.webp',
     challenge: 'Prevent the release of methane and other volatile hydrocarbons during processing, under extreme cold-weather conditions that can affect equipment reliability.',
     solution: 'Delivered a custom-winterized VRU with specialized heating elements and insulation, engineered to operate flawlessly at temperatures down to -50°C.',
     results: 'The system has a 100% operational uptime, preventing greenhouse gas emissions and contributing to both economic and environmental goals in the arctic region.'
@@ -47,7 +47,7 @@ const projects = [
   {
     title: 'Jordanian SGS test',
     location: 'Jordan',
-    imageUrl: '/proj_6.png',
+    imageUrl: '/proj_6.webp',
     challenge: 'An existing, underperforming vapor recovery system was failing to meet new, stricter EPA regulations, putting the facility at risk of fines and operational shutdowns.',
     solution: 'Conducted a full-scale upgrade of the terminal\'s vapor recovery infrastructure, replacing outdated components with our high-efficiency absorption technology.',
     results: 'Increased the facility\'s processing capacity by 40% and surpassed all new EPA air quality standards, safeguarding local communities and ensuring uninterrupted operation.'
@@ -61,6 +61,8 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ proj
     <img
       src={project.imageUrl}
       alt={project.title}
+      loading="lazy"
+      decoding="async"
       className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
     />
     <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300"></div>

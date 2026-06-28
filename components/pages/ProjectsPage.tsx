@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PageHero from '../PageHero';
 import { FiX } from 'react-icons/fi';
 import { projects } from '../../data/siteContent';
@@ -7,6 +7,49 @@ type Project = (typeof projects)[0];
 
 const ProjectsPage: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    previouslyFocusedRef.current = document.activeElement as HTMLElement;
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedProject(null);
+      }
+
+      if (event.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!first || !last) return;
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      previouslyFocusedRef.current?.focus();
+    };
+  }, [selectedProject]);
 
   return (
     <div className="sevali-page">
@@ -14,7 +57,7 @@ const ProjectsPage: React.FC = () => {
         label="Projects"
         title="Proof across stations, partnerships, testing, and climate forums."
         subtitle="Sevali’s project story combines measurable vapor recovery, regional partnerships, certification culture, and participation in energy-transition conversations."
-        backgroundImageUrl="/koreastation2.png"
+        backgroundImageUrl="/koreastation2.webp"
       />
 
       <section className="sevali-section">
@@ -26,7 +69,7 @@ const ProjectsPage: React.FC = () => {
               onClick={() => setSelectedProject(project)}
               className="sevali-card group overflow-hidden text-left transition hover:-translate-y-1 hover:border-amber-400"
             >
-              <img src={project.imageUrl} alt={project.title} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={project.imageUrl} alt={project.title} loading="lazy" decoding="async" className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="p-6">
                 <p className="text-sm font-extrabold text-amber-700">{project.type}</p>
                 <h2 className="mt-2 text-2xl font-extrabold text-gray-950">{project.title}</h2>
@@ -46,10 +89,11 @@ const ProjectsPage: React.FC = () => {
           aria-labelledby="project-title"
           onClick={() => setSelectedProject(null)}
         >
-          <div className="grid max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-xl bg-white md:grid-cols-2" onClick={(event) => event.stopPropagation()}>
-            <img src={selectedProject.imageUrl} alt={selectedProject.title} className="h-72 w-full object-cover md:h-full" />
+          <div ref={modalRef} className="grid max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-xl bg-white md:grid-cols-2" onClick={(event) => event.stopPropagation()}>
+            <img src={selectedProject.imageUrl} alt={selectedProject.title} decoding="async" className="h-72 w-full object-cover md:h-full" />
             <div className="relative overflow-y-auto p-8">
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={() => setSelectedProject(null)}
                 className="absolute right-4 top-4 rounded-full border border-gray-200 p-2 text-gray-700"

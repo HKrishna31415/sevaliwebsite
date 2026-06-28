@@ -174,6 +174,9 @@ const miamiTestPhotos = [
   },
 ];
 
+const miamiProofPhotos = [miamiTestPhotos[0], miamiTestPhotos[4]];
+const miamiGalleryPhotos = [miamiTestPhotos[1], miamiTestPhotos[2], miamiTestPhotos[3], miamiTestPhotos[5]];
+
 const miamiTestPoints = [
   'Multiple sensor placements across paved and landscaped station areas.',
   'Core-drilled access points for paved forecourt testing.',
@@ -187,15 +190,12 @@ const EnvironmentalBalancePage: React.FC = () => (
       label="Environmental Balance Devices"
       title="Passive remediation support for cleaner station soil, water, and air."
       subtitle="Sevali helps fuel stations apply Environmental Balance Device technology where conventional treatment is too disruptive, too maintenance-heavy, or too narrow for the whole site problem."
-      backgroundImageUrl="/gasstationfuture.png"
+      backgroundImageUrl="/gasstationfuture.webp"
     >
       <div className="flex flex-wrap gap-3">
         <Link to="/contact" className="sevali-button sevali-button-amber">
           Review my site
           <FiArrowRight className="h-5 w-5" />
-        </Link>
-        <Link to="/solutions" className="sevali-button border border-white/40 text-white hover:bg-white/10 hover:text-white">
-          Back to all solutions
         </Link>
         <a href="#miami-ebd-test" className="sevali-button border border-white/40 text-white hover:bg-white/10 hover:text-white">
           View Miami field test
@@ -226,6 +226,41 @@ const EnvironmentalBalancePage: React.FC = () => (
               Best fit: operators who need a practical environmental upgrade before a problem becomes a shutdown, complaint, or expensive excavation project.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="miami-ebd-test" className="sevali-section scroll-mt-28">
+      <div className="sevali-container grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+        <div>
+          <p className="sevali-kicker">Miami station field test</p>
+          <h2 className="sevali-heading-md mt-2">Proof before the deep technical map.</h2>
+          <p className="sevali-copy mt-5">
+            Sevali documented EBD sensor placement across a real Miami fuel station: paved forecourt access points, landscaped soil, curb edges, and runoff-adjacent locations. The test gives buyers a practical view of how the technology can be placed around the actual surfaces they manage every day.
+          </p>
+          <div className="mt-6 grid gap-3">
+            {miamiTestPoints.slice(0, 3).map((point) => (
+              <div key={point} className="flex gap-3 text-sm font-bold leading-6 text-gray-900">
+                <FiCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
+                {point}
+              </div>
+            ))}
+          </div>
+          <a href="#miami-ebd-gallery" className="sevali-button sevali-button-primary mt-7">
+            View field-test gallery
+            <FiArrowRight className="h-5 w-5" />
+          </a>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {miamiProofPhotos.map((photo) => (
+            <figure key={photo.src} className="sevali-card overflow-hidden bg-white">
+              <img src={photo.src} alt={photo.caption} loading="lazy" decoding="async" className="h-80 w-full object-cover" />
+              <figcaption className="p-5">
+                <p className="font-extrabold text-gray-950">{photo.title}</p>
+                <p className="mt-2 text-sm leading-6 text-gray-700">{photo.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
@@ -301,7 +336,7 @@ const EnvironmentalBalancePage: React.FC = () => (
         <div className="grid gap-4">
           {howItWorks.map((step, index) => (
             <div key={step} className="flex gap-4 rounded-xl bg-white/7 p-5">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-300 text-sm font-extrabold text-gray-950">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-300 text-sm font-extrabold text-black">
                 {index + 1}
               </span>
               <p className="leading-7 text-white/82">{step}</p>
@@ -342,7 +377,7 @@ const EnvironmentalBalancePage: React.FC = () => (
       </div>
     </section>
 
-    <section id="miami-ebd-test" className="sevali-section scroll-mt-28">
+    <section id="miami-ebd-gallery" className="sevali-section scroll-mt-28">
       <div className="sevali-container">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
@@ -365,9 +400,9 @@ const EnvironmentalBalancePage: React.FC = () => (
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[1.18fr_0.82fr]">
           <div className="grid gap-5 sm:grid-cols-2">
-            {miamiTestPhotos.map((photo, index) => (
+            {miamiGalleryPhotos.map((photo, index) => (
               <figure key={photo.src} className={`sevali-card overflow-hidden bg-white ${index === 0 ? 'sm:col-span-2' : ''}`}>
-                <img src={photo.src} alt={photo.caption} className={`${index === 0 ? 'h-[26rem]' : 'h-72'} w-full object-cover`} />
+                <img src={photo.src} alt={photo.caption} loading="lazy" decoding="async" className={`${index === 0 ? 'h-[26rem]' : 'h-72'} w-full object-cover`} />
                 <figcaption className="p-5">
                   <p className="font-extrabold text-gray-950">{photo.title}</p>
                   <p className="mt-2 text-sm leading-6 text-gray-700">{photo.caption}</p>
@@ -433,7 +468,7 @@ const EnvironmentalBalancePage: React.FC = () => (
     <section className="sevali-section bg-white">
       <div className="sevali-container grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="overflow-hidden rounded-2xl">
-          <img src="/proj_6.png" alt="Station infrastructure where environmental water systems may be evaluated" className="h-full min-h-[28rem] w-full object-cover" />
+          <img src="/miami-ebd-ground-placement.jpg" alt="Environmental Balance Device soil placement at a fuel station test area" loading="lazy" decoding="async" className="h-full min-h-[28rem] w-full object-cover" />
         </div>
         <div>
           <p className="sevali-kicker">Proof posture</p>

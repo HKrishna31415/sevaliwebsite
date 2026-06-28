@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { contactInfo, primaryNav } from '../data/siteContent';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -24,6 +24,24 @@ const NavLink: React.FC<{
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -63,27 +81,25 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      <div
-        className={`fixed inset-0 z-30 bg-white text-gray-950 transition-transform duration-300 lg:hidden ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex h-full flex-col justify-center px-8 pt-20">
-          <nav className="flex flex-col gap-7" aria-label="Mobile navigation">
-            {primaryNav.map((link) => (
-              <NavLink key={link.to} to={link.to} isMobile onClick={() => setIsMenuOpen(false)}>
-                {link.title}
-              </NavLink>
-            ))}
-          </nav>
-          <div className="mt-12 border-t border-gray-200 pt-8">
-            <p className="text-sm font-semibold text-gray-500">Consultation line</p>
-            <a href={`tel:${contactInfo.mobile.replace(/\s/g, '')}`} className="mt-1 block text-2xl font-extrabold text-gray-950">
-              {contactInfo.mobile}
-            </a>
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-30 bg-white text-gray-950 lg:hidden" aria-modal="true" role="dialog">
+          <div className="flex h-full flex-col justify-center px-8 pt-20">
+            <nav className="flex flex-col gap-7" aria-label="Mobile navigation">
+              {primaryNav.map((link) => (
+                <NavLink key={link.to} to={link.to} isMobile onClick={() => setIsMenuOpen(false)}>
+                  {link.title}
+                </NavLink>
+              ))}
+            </nav>
+            <div className="mt-12 border-t border-gray-200 pt-8">
+              <p className="text-sm font-semibold text-gray-500">Consultation line</p>
+              <a href={`tel:${contactInfo.mobile.replace(/\s/g, '')}`} className="mt-1 block text-2xl font-extrabold text-gray-950">
+                {contactInfo.mobile}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
